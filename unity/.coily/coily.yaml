@@ -1,0 +1,14 @@
+commands:
+  pre-commit-all:
+    run: pre-commit run --all-files
+    description: Run the full pre-commit suite across every file in the repo.
+
+catalog:
+  kind: Component
+  type: configuration
+  system: eco
+  owner: kai
+  lifecycle: production
+  dependsOn: []
+  providesApis: []
+  description: "Source assets and Unity project for eco-mods builds."

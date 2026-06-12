@@ -1,0 +1,52 @@
+using Eco.Gameplay.Items;
+using Eco.Mods.TechTree;
+using Eco.Shared.Localization;
+
+namespace MinesQuarries
+{
+    public class ExcavatableRestriction : InventoryRestriction
+    {
+        public override LocString Message =>
+            Localizer.DoStr("Inventory only accepts excavatable items.");
+
+        public override int MaxAccepted(Item item) =>
+            item.GetType().HasTag(TagManager.GetTagOrFail("Excavatable")) ? -1 : 0;
+
+        public override int Priority => 1;
+
+        public override RestrictionType Type => RestrictionType.Specialized;
+    }
+
+    public class SandRestriction : InventoryRestriction
+    {
+        public override LocString Message => Localizer.DoStr("Inventory only accepts sand.");
+
+        public override int MaxAccepted(Item item) => item.GetType() == typeof(SandItem) ? -1 : 0;
+
+        public override int Priority => 1;
+
+        public override RestrictionType Type => RestrictionType.Specialized;
+    }
+
+    public class ClayRestriction : InventoryRestriction
+    {
+        public override LocString Message => Localizer.DoStr("Inventory only accepts clay.");
+
+        public override int MaxAccepted(Item item) => item.GetType() == typeof(ClayItem) ? -1 : 0;
+
+        public override int Priority => 1;
+
+        public override RestrictionType Type => RestrictionType.Specialized;
+    }
+
+    public class DirtRestriction : InventoryRestriction
+    {
+        public override LocString Message => Localizer.DoStr("Inventory only accepts dirt.");
+
+        public override int MaxAccepted(Item item) => item.GetType() == typeof(DirtItem) ? -1 : 0;
+
+        public override int Priority => 1;
+
+        public override RestrictionType Type => RestrictionType.Specialized;
+    }
+}

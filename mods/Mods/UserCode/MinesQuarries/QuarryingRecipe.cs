@@ -1,0 +1,127 @@
+namespace MinesQuarries
+{
+    using System.Collections.Generic;
+    using Eco.Gameplay.Components;
+    using Eco.Gameplay.Items.Recipes;
+    using Eco.Gameplay.Skills;
+    using Eco.Mods.TechTree;
+    using Eco.Shared.Localization;
+
+    [RequiresSkill(typeof(MiningSkill), 4)]
+    public partial class SandstoneQuarrying : RecipeFamily
+    {
+        public SandstoneQuarrying()
+        {
+            Recipe recipe = new();
+            LocString displayName = Localizer.DoStr("Sandstone Quarrying");
+            recipe.Init(
+                name: this.GetType().Name,
+                displayName: displayName,
+                ingredients: new List<IngredientElement>
+                {
+                    new(typeof(IronPickaxeItem), 1, staticIngredient: true),
+                },
+                items: new List<CraftingElement> { new CraftingElement<SandstoneItem>(400) }
+            );
+            this.Recipes = new List<Recipe> { recipe };
+            this.LaborInCalories = this.CreateLaborInCaloriesValue(4000, typeof(MiningSkill));
+            this.CraftMinutes = CreateCraftTimeValue(
+                beneficiary: typeof(SandstoneQuarrying),
+                start: 4,
+                skillType: typeof(MiningSkill)
+            );
+            this.Initialize(displayText: displayName, recipeType: typeof(SandstoneQuarrying));
+            CraftingComponent.AddRecipe(
+                tableType: typeof(SandstoneQuarryObject),
+                recipeFamily: this
+            );
+        }
+    }
+
+    [RequiresSkill(typeof(MiningSkill), 4)]
+    public partial class LimestoneQuarrying : RecipeFamily
+    {
+        public LimestoneQuarrying()
+        {
+            Recipe recipe = new();
+            LocString displayName = Localizer.DoStr("Limestone Quarrying");
+            recipe.Init(
+                name: this.GetType().Name,
+                displayName: displayName,
+                ingredients: new List<IngredientElement>
+                {
+                    new(typeof(IronPickaxeItem), 1, staticIngredient: true),
+                },
+                items: new List<CraftingElement> { new CraftingElement<LimestoneItem>(400) }
+            );
+            this.Recipes = new List<Recipe> { recipe };
+            this.LaborInCalories = this.CreateLaborInCaloriesValue(4000, typeof(MiningSkill));
+            this.CraftMinutes = CreateCraftTimeValue(
+                beneficiary: typeof(LimestoneQuarrying),
+                start: 4,
+                skillType: typeof(MiningSkill)
+            );
+            this.Initialize(displayText: displayName, recipeType: typeof(LimestoneQuarrying));
+            CraftingComponent.AddRecipe(
+                tableType: typeof(LimestoneQuarryObject),
+                recipeFamily: this
+            );
+        }
+    }
+
+    [RequiresSkill(typeof(MiningSkill), 4)]
+    public partial class GraniteQuarrying : RecipeFamily
+    {
+        public GraniteQuarrying()
+        {
+            Recipe recipe = new();
+            LocString displayName = Localizer.DoStr("Granite Quarrying");
+            recipe.Init(
+                name: this.GetType().Name,
+                displayName: displayName,
+                ingredients: new List<IngredientElement>
+                {
+                    new(typeof(IronPickaxeItem), 1, staticIngredient: true),
+                },
+                items: new List<CraftingElement> { new CraftingElement<GraniteItem>(400) }
+            );
+            this.Recipes = new List<Recipe> { recipe };
+            this.LaborInCalories = this.CreateLaborInCaloriesValue(4000, typeof(MiningSkill));
+            this.CraftMinutes = CreateCraftTimeValue(
+                beneficiary: typeof(GraniteQuarrying),
+                start: 4,
+                skillType: typeof(MiningSkill)
+            );
+            this.Initialize(displayText: displayName, recipeType: typeof(GraniteQuarrying));
+            CraftingComponent.AddRecipe(tableType: typeof(GraniteQuarryObject), recipeFamily: this);
+        }
+    }
+
+    [RequiresSkill(typeof(MiningSkill), 4)]
+    public partial class ShaleQuarrying : RecipeFamily
+    {
+        public ShaleQuarrying()
+        {
+            Recipe recipe = new();
+            LocString displayName = Localizer.DoStr("Shale Quarrying");
+            recipe.Init(
+                name: this.GetType().Name,
+                displayName: displayName,
+                ingredients: new List<IngredientElement>
+                {
+                    new(typeof(IronPickaxeItem), 1, staticIngredient: true),
+                },
+                items: new List<CraftingElement> { new CraftingElement<ShaleItem>(400) }
+            );
+            this.Recipes = new List<Recipe> { recipe };
+            this.LaborInCalories = this.CreateLaborInCaloriesValue(4000, typeof(MiningSkill));
+            this.CraftMinutes = CreateCraftTimeValue(
+                beneficiary: typeof(ShaleQuarrying),
+                start: 4,
+                skillType: typeof(MiningSkill)
+            );
+            this.Initialize(displayText: displayName, recipeType: typeof(ShaleQuarrying));
+            CraftingComponent.AddRecipe(tableType: typeof(ShaleQuarryObject), recipeFamily: this);
+        }
+    }
+}

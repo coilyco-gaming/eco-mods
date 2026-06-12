@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990562a2c7a14518b8146acf97468d94, type: 3}
+  m_Name: Animset_WoodenShovel
+  m_EditorClassIdentifier: 
+  OverrideStates:
+  - State: FPV_Hands_Idle
+    Clip: {fileID: 1827226128182048838, guid: cfee57b56f4fa5042bcded5cf3aa16ad, type: 3}
+  - State: FPV_Hands_Run
+    Clip: {fileID: 1827226128182048838, guid: ee4dd05ec6dd29044ac2b9d6c8389bf2, type: 3}
+  - State: FPV_Hands_Walk
+    Clip: {fileID: 1827226128182048838, guid: ee09350385dac6741857c0bb03136233, type: 3}
+  - State: FPV_Hands_Harvest
+    Clip: {fileID: 1827226128182048838, guid: 85bbfd5af1b998d42974e2407b8d2f20, type: 3}
+  - State: FPV_Hands_Jog
+    Clip: {fileID: 1827226128182048838, guid: 69e62d53811a6544eab5d20d155033f5, type: 3}
+  - State: FPV_Hands_Wooden_Shovel_Work_Lift
+    Clip: {fileID: 1377913688136556983, guid: 17c3f62673fe70b4292a99e2805036a1, type: 3}
+  - State: FPV_Hands_Wooden_Shovel_Work_Drop
+    Clip: {fileID: -3248974016926548924, guid: 9e9331ba44ff8fe45924b1929f3caf51, type: 3}
+  - State: FPV_Hands_Climb
+    Clip: {fileID: 1827226128182048838, guid: d5c599df32abd8045be58f36dd6fe3cc, type: 3}
+  - State: FPV_Hands_Idle_Start
+    Clip: {fileID: 1827226128182048838, guid: 8c70d118d4e58f64fbddd3198a4effc8, type: 3}
+  - State: FPV_Hands_Idle_Exit
+    Clip: {fileID: 1827226128182048838, guid: dfb9dbd3b2c2d084ab6122481bb74e97, type: 3}
+  - State: FPV_Hands_Jump
+    Clip: {fileID: 1827226128182048838, guid: cfee57b56f4fa5042bcded5cf3aa16ad, type: 3}
+  - State: FPV_Hands_Swimming
+    Clip: {fileID: 1827226128182048838, guid: cfee57b56f4fa5042bcded5cf3aa16ad, type: 3}

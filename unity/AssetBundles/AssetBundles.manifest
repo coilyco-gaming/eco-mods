@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+UnityVersion: 2023.2.13f1
+CRC: 4187037247
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: construction
+      Dependencies: {}
+    Info_1:
+      Name: dcc
+      Dependencies: {}
+    Info_2:
+      Name: minesquarries
+      Dependencies: {}
+    Info_3:
+      Name: chemicallaboratory
+      Dependencies: {}
+    Info_4:
+      Name: educational
+      Dependencies: {}
+    Info_5:
+      Name: econil
+      Dependencies: {}
+    Info_6:
+      Name: goldleafcaviar
+      Dependencies: {}

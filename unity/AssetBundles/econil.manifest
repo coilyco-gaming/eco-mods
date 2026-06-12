@@ -1,0 +1,53 @@
+ManifestFileVersion: 0
+UnityVersion: 2023.2.13f1
+CRC: 2054163139
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: dee2871b3c298bb3b8b50e0e64d2b4d1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 64001c1795ad74d128f0e31e00490599
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 3e97e5225443f1c7c4ddfe852088cddc
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2736eee4c5f28934c94000bf73bb1719, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b5ef5fa54cb167144b0c14545efe42ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 22281bf2bb54279449ac8e3fbf199314, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Scenes/EcoNil.unity
+Dependencies: []

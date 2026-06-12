@@ -1,0 +1,49 @@
+ManifestFileVersion: 0
+UnityVersion: 2023.2.13f1
+CRC: 2399819625
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1f14883c8f5cbce317d5964ac12eed4c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c33e821c30183d08530e50080e17e23d
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 8822f66cacebcac6e3aa36e6cede09e5
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Scenes/GoldLeafCaviar.unity
+Dependencies: []

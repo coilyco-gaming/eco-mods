@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 662d873c226a5e140aa5de6ecd20dcfb
+timeCreated: 1453427998
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ElbowJoint_L
+    100002: ElbowJoint_R
+    100004: RootEyes
+    100006: ShoulderJoint_L
+    100008: ShoulderJoint_R
+    100010: Shovel
+    100012: //RootNode
+    100014: ShovelTipJoint
+    100016: WristJoint_L
+    100018: WristJoint_R
+    100020: pasted__ShovelLoadJoint
+    100022: pasted__transform3
+    100024: ShovelLoadJoint
+    100026: transform3
+    400000: ElbowJoint_L
+    400002: ElbowJoint_R
+    400004: RootEyes
+    400006: ShoulderJoint_L
+    400008: ShoulderJoint_R
+    400010: Shovel
+    400012: //RootNode
+    400014: ShovelTipJoint
+    400016: WristJoint_L
+    400018: WristJoint_R
+    400020: pasted__ShovelLoadJoint
+    400022: pasted__transform3
+    400024: ShovelLoadJoint
+    400026: transform3
+    2300000: Shovel
+    3300000: Shovel
+    4300000: Shovel
+    7400000: Idle
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: RootEyes
+        weight: 1
+      - path: RootEyes/ShoulderJoint_L
+        weight: 1
+      - path: RootEyes/ShoulderJoint_L/ElbowJoint_L
+        weight: 1
+      - path: RootEyes/ShoulderJoint_L/ElbowJoint_L/WristJoint_L
+        weight: 1
+      - path: RootEyes/ShoulderJoint_R
+        weight: 1
+      - path: RootEyes/ShoulderJoint_R/ElbowJoint_R
+        weight: 1
+      - path: RootEyes/ShoulderJoint_R/ElbowJoint_R/WristJoint_R
+        weight: 1
+      - path: RootEyes/ShoulderJoint_R/ElbowJoint_R/WristJoint_R/Shovel
+        weight: 1
+      - path: RootEyes/ShoulderJoint_R/ElbowJoint_R/WristJoint_R/ShovelTipJoint
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.9
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

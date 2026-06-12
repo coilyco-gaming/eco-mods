@@ -1,0 +1,5 @@
+[documentation-layout]
+# Assets/ is vendored Eco / EcoModKit / third-party content. Their Markdown
+# files live at upstream paths we do not control, so exempt them from the
+# repo-root / docs / skill layout rule rather than moving vendored files.
+excludes = ["Assets/**"]

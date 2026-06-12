@@ -1,0 +1,12 @@
+bin/
+obj/
+eco-server/
+.vs/
+.config/
+.claude/settings.local.json
+.claude/worktrees/
+*.zip
+
+.venv/
+__pycache__/
+*.egg-info/
