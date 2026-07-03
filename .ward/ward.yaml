@@ -1,0 +1,9 @@
+catalog:
+  kind: Component
+  type: mod
+  system: eco
+  owner: kai
+  lifecycle: production
+  description: "Eco gameplay mods and Unity assets for the gaming stack."
+  dependsOn:
+    - github.com/StrangeLoopGames/Eco
