@@ -22,6 +22,12 @@ jobs:
           test -f .gitattributes
           test -f .ward/ward.yaml
 
+      - name: Alert Telegram on main failure
+        if: ${{ failure() && github.ref == 'refs/heads/main' }}
+        uses: coilyco-flight-deck/agentic-os/actions/telegram-alert@main
+        with:
+          bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          chat-id: ${{ secrets.TELEGRAM_RED_CHAT_ID }}
   mods:
     name: mods code path
     runs-on: docker
@@ -35,6 +41,12 @@ jobs:
         working-directory: mods
         run: dotnet build eco-mods-public.sln --nologo
 
+      - name: Alert Telegram on main failure
+        if: ${{ failure() && github.ref == 'refs/heads/main' }}
+        uses: coilyco-flight-deck/agentic-os/actions/telegram-alert@main
+        with:
+          bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          chat-id: ${{ secrets.TELEGRAM_RED_CHAT_ID }}
   secrets:
     name: Repo secret scan
     runs-on: docker
@@ -59,3 +71,9 @@ jobs:
           trufflehog filesystem . \
             --no-verification --no-update --fail \
             --exclude-paths=/tmp/trufflehog-exclude
+      - name: Alert Telegram on main failure
+        if: ${{ failure() && github.ref == 'refs/heads/main' }}
+        uses: coilyco-flight-deck/agentic-os/actions/telegram-alert@main
+        with:
+          bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          chat-id: ${{ secrets.TELEGRAM_RED_CHAT_ID }}
