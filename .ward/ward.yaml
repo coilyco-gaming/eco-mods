@@ -1,3 +1,31 @@
+commands:
+  build-mods:
+    run: make -C mods build
+    description: Type-check all server mods against Eco.ReferenceAssemblies.
+  test-mod-packages:
+    run: make -C mods test-packages
+    description: Test deterministic per-mod packaging and Forgejo publishing.
+  lint-mod-packages:
+    run: make -C mods lint-packages
+    description: Lint and format-check the mod package tooling.
+  format-mod-packages:
+    run: make -C mods format-packages
+    description: Format the mod package tooling.
+  python-syntax:
+    run: python3 -m compileall -q mods
+    description: Compile the Python tooling to catch syntax errors.
+  validate-ci:
+    run: uv run --project mods python3 mods/scripts/validate_workflow.py
+    description: Parse the Forgejo workflow as YAML.
+  secret-scan:
+    run: pre-commit run trufflehog --all-files --config mods/.pre-commit-config.yaml
+    description: Run both offline trufflehog hooks without the broken layout hooks.
+  package-mod:
+    run: make -C mods package-mod
+    description: Package MOD_NAME under .build/mod-package for MOD_SOURCE_REVISION.
+  publish-mod:
+    run: make -C mods publish-mod
+    description: Publish .build/mod-package using the FORGEJO_PACKAGE_* environment.
 catalog:
   kind: Component
   type: mod

@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,7 +13,7 @@ jobs:
   hygiene:
     name: Root hygiene
     runs-on: docker
-    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.195.0
+    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.255.0
     steps:
       - uses: actions/checkout@v4
       - name: Root hygiene baseline
@@ -36,6 +37,7 @@ jobs:
           API_BASE: https://api.telegram.org
         run: |
           set -euo pipefail
+          export HTTPS_PROXY="${FORGEJO_EGRESS_PROXY:?runner must provide FORGEJO_EGRESS_PROXY}"
           python3 - <<'PY'
           import os
           import urllib.error
@@ -85,15 +87,24 @@ jobs:
   mods:
     name: mods code path
     runs-on: docker
-    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.195.0
+    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.255.0
     steps:
       - uses: actions/checkout@v4
       - name: Python syntax
-        working-directory: mods
-        run: python -m compileall .
-      - name: dotnet build
-        working-directory: mods
-        run: dotnet build eco-mods-public.sln --nologo
+        run: ward exec python-syntax
+      - name: Workflow syntax
+        run: ward exec validate-ci
+      - name: Package tooling tests
+        run: ward exec test-mod-packages
+      - name: Package tooling lint
+        run: ward exec lint-mod-packages
+      - name: Restore and build all mods
+        run: |
+          set -euo pipefail
+          : "${FORGEJO_EGRESS_PROXY:?runner must provide FORGEJO_EGRESS_PROXY}"
+          export HTTP_PROXY="$FORGEJO_EGRESS_PROXY"
+          export HTTPS_PROXY="$FORGEJO_EGRESS_PROXY"
+          ward exec build-mods
 
       - name: Alert Telegram on main failure
         if: ${{ failure() && github.ref == 'refs/heads/main' }}
@@ -109,6 +120,130 @@ jobs:
           API_BASE: https://api.telegram.org
         run: |
           set -euo pipefail
+          export HTTPS_PROXY="${FORGEJO_EGRESS_PROXY:?runner must provide FORGEJO_EGRESS_PROXY}"
+          python3 - <<'PY'
+          import os
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+
+          def build_message(repo, workflow, job, ref, sha, run_url):
+              return "\n".join([
+                  "CI failed on main",
+                  f"repo: {repo}",
+                  f"workflow: {workflow}",
+                  f"job: {job}",
+                  f"ref: {ref}",
+                  f"sha: {sha}",
+                  f"run: {run_url}",
+              ])
+
+          def main():
+              bot_token = os.environ["BOT_TOKEN"]
+              chat_id = os.environ["CHAT_ID"]
+              message = build_message(
+                  os.environ["REPO"],
+                  os.environ["WORKFLOW"],
+                  os.environ["JOB"],
+                  os.environ["REF"],
+                  os.environ["SHA"],
+                  os.environ["RUN_URL"],
+              )
+              payload = urllib.parse.urlencode(
+                  {
+                      "chat_id": chat_id,
+                      "text": message,
+                      "disable_web_page_preview": "true",
+                  }
+              ).encode("utf-8")
+              url = f"{os.environ['API_BASE'].rstrip('/')}/bot{bot_token}/sendMessage"
+              req = urllib.request.Request(url, data=payload, method="POST")
+              try:
+                  with urllib.request.urlopen(req, timeout=15) as resp:
+                      resp.read()
+              except urllib.error.URLError as exc:
+                  print(f"telegram alert failed: {exc}")
+                  raise SystemExit(1)
+
+          main()
+          PY
+  publish-mod:
+    name: publish-${{ matrix.package }}
+    if: ${{ github.event_name != 'pull_request' }}
+    needs: [hygiene, mods, secrets]
+    runs-on: docker
+    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.255.0
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - mod: BunWulfAgricultural
+            package: bunwulf-agricultural
+          - mod: BunWulfBiochemical
+            package: bunwulf-biochemical
+          - mod: BunWulfEducational
+            package: bunwulf-educational
+          - mod: BunWulfHardwareCo
+            package: bunwulf-hardware-co
+          - mod: DirectCarbonCapture
+            package: direct-carbon-capture
+          - mod: EcoNil
+            package: eco-nil
+          - mod: MinesQuarries
+            package: mines-quarries
+          - mod: ShopBoat
+            package: shop-boat
+          - mod: WorldCounter
+            package: world-counter
+    steps:
+      - uses: actions/checkout@v4
+      - name: Materialize ${{ matrix.mod }} release assets
+        env:
+          MOD_NAME: ${{ matrix.mod }}
+        run: |
+          set -euo pipefail
+          git lfs pull --include="mods/Mods/UserCode/${MOD_NAME}/**" --exclude=""
+      - name: Package ${{ matrix.mod }}
+        env:
+          MOD_NAME: ${{ matrix.mod }}
+          MOD_PACKAGE_NAME: ${{ matrix.package }}
+          MOD_SOURCE_REVISION: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          ward exec package-mod
+          python3 -m json.tool .build/mod-package/manifest.json >/dev/null
+      - name: Require the Forgejo package publisher
+        env:
+          FORGEJO_PACKAGE_TOKEN: ${{ secrets.ECO_MOD_PACKAGE_TOKEN }}
+        run: |
+          set -eu
+          if [ -z "$FORGEJO_PACKAGE_TOKEN" ]; then
+            echo "FORGEJO_PACKAGE_TOKEN is required and must grant write:package" >&2
+            exit 1
+          fi
+      - name: Publish ${{ matrix.package }}
+        env:
+          FORGEJO_PACKAGE_URL: ${{ github.server_url }}
+          FORGEJO_PACKAGE_OWNER: coilyco-gaming
+          FORGEJO_PACKAGE_USER: coilyco-ops
+          FORGEJO_PACKAGE_TOKEN: ${{ secrets.ECO_MOD_PACKAGE_TOKEN }}
+          MOD_PACKAGE_DIR: .build/mod-package
+        run: ward exec publish-mod
+      - name: Alert Telegram on main failure
+        if: ${{ failure() && github.ref == 'refs/heads/main' }}
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_RED_CHAT_ID }}
+          REPO: ${{ github.repository }}
+          WORKFLOW: ${{ github.workflow }}
+          JOB: ${{ github.job }}-${{ matrix.package }}
+          REF: ${{ github.ref }}
+          SHA: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          API_BASE: https://api.telegram.org
+        run: |
+          set -euo pipefail
+          export HTTPS_PROXY="${FORGEJO_EGRESS_PROXY:?runner must provide FORGEJO_EGRESS_PROXY}"
           python3 - <<'PY'
           import os
           import urllib.error
@@ -158,7 +293,7 @@ jobs:
   secrets:
     name: Repo secret scan
     runs-on: docker
-    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.195.0
+    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.255.0
     steps:
       - uses: actions/checkout@v4
         with:
@@ -193,6 +328,7 @@ jobs:
           API_BASE: https://api.telegram.org
         run: |
           set -euo pipefail
+          export HTTPS_PROXY="${FORGEJO_EGRESS_PROXY:?runner must provide FORGEJO_EGRESS_PROXY}"
           python3 - <<'PY'
           import os
           import urllib.error
