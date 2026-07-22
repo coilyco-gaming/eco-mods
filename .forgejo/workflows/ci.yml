@@ -90,6 +90,12 @@ jobs:
     container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.255.0
     steps:
       - uses: actions/checkout@v4
+      - name: Configure dependency egress
+        run: |
+          set -euo pipefail
+          : "${FORGEJO_EGRESS_PROXY:?runner must provide FORGEJO_EGRESS_PROXY}"
+          echo "HTTP_PROXY=$FORGEJO_EGRESS_PROXY" >> "$GITHUB_ENV"
+          echo "HTTPS_PROXY=$FORGEJO_EGRESS_PROXY" >> "$GITHUB_ENV"
       - name: Python syntax
         run: ward exec python-syntax
       - name: Workflow syntax
@@ -99,12 +105,7 @@ jobs:
       - name: Package tooling lint
         run: ward exec lint-mod-packages
       - name: Restore and build all mods
-        run: |
-          set -euo pipefail
-          : "${FORGEJO_EGRESS_PROXY:?runner must provide FORGEJO_EGRESS_PROXY}"
-          export HTTP_PROXY="$FORGEJO_EGRESS_PROXY"
-          export HTTPS_PROXY="$FORGEJO_EGRESS_PROXY"
-          ward exec build-mods
+        run: ward exec build-mods
 
       - name: Alert Telegram on main failure
         if: ${{ failure() && github.ref == 'refs/heads/main' }}
