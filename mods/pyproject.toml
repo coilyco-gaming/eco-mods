@@ -10,6 +10,11 @@ dependencies = [
     "regex",
 ]
 
+[dependency-groups]
+dev = [
+    "ruff>=0.15.10",
+]
+
 [tool.agentic-os.documentation-layout]
 # Mod READMEs live inside each mod's directory as part of its distributed
 # structure, so they are exempt from the root/docs/skill location rule.

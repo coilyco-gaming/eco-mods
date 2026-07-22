@@ -2,6 +2,9 @@ commands:
   build-mods:
     run: make -C mods build
     description: Type-check all server mods against Eco.ReferenceAssemblies.
+  lock-mods:
+    run: uv lock --project mods
+    description: Refresh the locked Python environment for mod tooling.
   test-mod-packages:
     run: make -C mods test-packages
     description: Test deterministic per-mod packaging and Forgejo publishing.

@@ -12,11 +12,11 @@ test-packages: ## Test deterministic per-mod package creation and publishing.
 	python3 -m unittest discover -s tests -p 'test_*.py'
 
 lint-packages: ## Lint and format-check the package tooling.
-	ruff check scripts/mod_packages.py scripts/validate_workflow.py tests/test_mod_packages.py
-	ruff format --check scripts/mod_packages.py scripts/validate_workflow.py tests/test_mod_packages.py
+	uv run ruff check scripts/mod_packages.py scripts/validate_workflow.py tests/test_mod_packages.py
+	uv run ruff format --check scripts/mod_packages.py scripts/validate_workflow.py tests/test_mod_packages.py
 
 format-packages: ## Format the package tooling.
-	ruff format scripts/mod_packages.py scripts/validate_workflow.py tests/test_mod_packages.py
+	uv run ruff format scripts/mod_packages.py scripts/validate_workflow.py tests/test_mod_packages.py
 
 package-mod: ## Package one mod for Forgejo. Env - MOD_NAME, MOD_PACKAGE_NAME, MOD_SOURCE_REVISION.
 	python3 scripts/mod_packages.py package \
