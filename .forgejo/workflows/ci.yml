@@ -13,7 +13,7 @@ jobs:
   hygiene:
     name: Root hygiene
     runs-on: docker
-    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.255.0
+    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:release
     steps:
       - uses: actions/checkout@v4
       - name: Root hygiene baseline
@@ -87,7 +87,7 @@ jobs:
   mods:
     name: mods code path
     runs-on: docker
-    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.255.0
+    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:release
     steps:
       - uses: actions/checkout@v4
       - name: Configure dependency egress
@@ -173,7 +173,7 @@ jobs:
     if: ${{ github.event_name != 'pull_request' }}
     needs: [hygiene, mods, secrets]
     runs-on: docker
-    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.255.0
+    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:release
     strategy:
       fail-fast: false
       matrix:
@@ -294,7 +294,7 @@ jobs:
   secrets:
     name: Repo secret scan
     runs-on: docker
-    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:v0.255.0
+    container: forgejo.coilysiren.me/coilyco-flight-deck/agentic-os:release
     steps:
       - uses: actions/checkout@v4
         with:
