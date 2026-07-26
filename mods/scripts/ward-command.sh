@@ -11,7 +11,7 @@ case "$action" in
     dotnet build eco-mods-public.sln --nologo
     ;;
   test-packages)
-    python3 -m unittest discover -s tests -p 'test_*.py'
+    uv run python -m unittest discover -s tests -p 'test_*.py'
     ;;
   lint-packages)
     uv run ruff check scripts/mod_packages.py scripts/validate_workflow.py tests/test_mod_packages.py
@@ -24,7 +24,7 @@ case "$action" in
     : "${MOD_NAME:?MOD_NAME is required}"
     : "${MOD_PACKAGE_NAME:?MOD_PACKAGE_NAME is required}"
     : "${MOD_SOURCE_REVISION:?MOD_SOURCE_REVISION is required}"
-    python3 scripts/mod_packages.py package \
+    uv run python scripts/mod_packages.py package \
       --repo-root .. \
       --output ../.build/mod-package \
       --mod "$MOD_NAME" \
@@ -32,7 +32,7 @@ case "$action" in
       --revision "$MOD_SOURCE_REVISION"
     ;;
   publish-mod)
-    python3 scripts/mod_packages.py publish --input ../.build/mod-package
+    uv run python scripts/mod_packages.py publish --input ../.build/mod-package
     ;;
   copy-assets)
     uv run python scripts/mods.py copy-assets "$@"

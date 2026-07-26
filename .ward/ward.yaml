@@ -15,10 +15,10 @@ commands:
     run: bash mods/scripts/ward-command.sh format-packages
     description: Format the mod package tooling.
   python-syntax:
-    run: python3 -m compileall -q mods
+    run: uv run --project mods python -m compileall -q mods
     description: Compile the Python tooling to catch syntax errors.
   validate-ci:
-    run: uv run --project mods python3 mods/scripts/validate_workflow.py
+    run: uv run --project mods python mods/scripts/validate_workflow.py
     description: Parse the Forgejo workflow as YAML.
   secret-scan:
     run: pre-commit run trufflehog --all-files --config mods/.pre-commit-config.yaml
