@@ -51,8 +51,8 @@ World statistics via a **Bookkeeping Desk**. Walks blocks within a radius, count
 ## Tooling and codegen
 
 - `main.cs` reads Eco core files, generates BunWulfEducational Librarian recipes via regex transformation.
-- `scripts/mods.py` + `util.py` + `recipes.yml` + `templates/` - Python pipeline for asset packaging, agricultural codegen, deployment. Wrapped by `coily` verbs.
-- Deploy: `coily copy-assets`, `coily zip-assets mod=<Name>`, `coily push-asset mod=<Name>`. Upload step lives in `coily gaming eco mod push`.
+- `scripts/mods.py` + `util.py` + `recipes.yml` + `templates/` - Python pipeline for asset packaging, agricultural codegen, deployment. Wrapped by Ward verbs.
+- Deploy: `ward exec copy-assets`, `ward exec zip-assets -- <Name>`, `ward exec push-asset -- <Name>`.
 - Distribution: per-mod `.zip` at repo root.
 
 ## Cross-cutting design
@@ -63,6 +63,6 @@ World statistics via a **Bookkeeping Desk**. Walks blocks within a radius, count
 
 ## See also
 
-- [README.md](../README.md), [AGENTS.md](../AGENTS.md), [.coily/coily.yaml](../.coily/coily.yaml).
+- [README.md](../README.md), [AGENTS.md](../AGENTS.md), [../../.ward/ward.yaml](../../.ward/ward.yaml).
 
 Cross-reference convention from [coilysiren/agentic-os#59](https://github.com/coilyco-flight-deck/agentic-os/issues/59).

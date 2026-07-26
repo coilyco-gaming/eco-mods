@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Asset and recipe tooling for eco-mods-public.
 
-Subcommands mirror what used to live in tasks.py. Driven from Makefile
-targets, which are themselves driven from coily verbs. See .coily/coily.yaml.
+Subcommands mirror what used to live in tasks.py. Ward exposes them through
+the repository command catalog. See ../.ward/ward.yaml.
 
-push-asset has moved out of Python entirely: zip-assets is now a Make rule,
+push-asset has moved out of Python entirely: zip-assets is now a Ward helper,
 and the actual upload lives in `coily gaming eco mod push`. This script
 keeps the Python-heavy verbs (copy-assets, bunwulf-*) and the cleaner
 zip helpers shared by copy-assets.

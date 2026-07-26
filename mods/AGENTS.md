@@ -26,18 +26,18 @@ The `../Eco/` sibling has vendor-provided game source. Background-only. Do not p
 
 ## Commands
 
-Route dev verbs through `coily`, which reads [.coily/coily.yaml](.coily/coily.yaml).
+Route dev verbs through Ward, which reads [../.ward/ward.yaml](../.ward/ward.yaml).
 
 ```sh
-coily build
-coily copy-assets
-coily zip-assets mod=<ModName>
-coily push-asset mod=<ModName>
+ward exec build-mods
+ward exec copy-assets
+ward exec zip-assets -- <ModName>
+ward exec push-asset -- <ModName>
 ```
 
 ## Validation
 
-`coily build` type-checks all mods against `Eco.ReferenceAssemblies`. Run `pre-commit run --all-files` before pushing. Run tests, linters, and builds without asking. Fix failures. Never use `--no-verify`.
+`ward exec build-mods` type-checks all mods against `Eco.ReferenceAssemblies`. Run the Ward validation verbs before pushing. Run tests, linters, and builds without asking. Fix failures. Never use `--no-verify`.
 
 ## Safety
 
@@ -47,14 +47,14 @@ Do not hand-edit generated files in `BunWulfEducational/Recipes/Tech/` or `BunWu
 
 Patch notes + restart heads-ups delegate to `../eco-cycle-prep/`:
 
-- `cd ../eco-cycle-prep && coily discord-post --channel=general-public --from-file=<path>`
-- `cd ../eco-cycle-prep && coily restart-notice [--reason="..."]`
+- `ward exec discord-post -- --channel=general-public --from-file=<path>` from the cycle-prep directory
+- `ward exec restart-notice -- [--reason="..."]` from the cycle-prep directory
 
 Voice rules in [`../eco-cycle-prep/AGENTS.md`](../eco-cycle-prep/AGENTS.md). Posting is gated to actual deploys (`push-asset`, `mods-sync`, mod.io release, direct ssh edit), not bare main commits.
 
 ## Release
 
-Targets: Windows `C:\Program Files (x86)\Steam\steamapps\common\Eco\Eco_Data\Server\`, Linux `/home/kai/Steam/steamapps/common/EcoServer/`. Mods distribute as `.zip` files users extract to their server root via `coily push-asset`.
+Targets: Windows `C:\Program Files (x86)\Steam\steamapps\common\Eco\Eco_Data\Server\`, Linux `/home/kai/Steam/steamapps/common/EcoServer/`. Mods distribute as `.zip` files users extract to their server root. The `ward exec push-asset` verb handles the private deployment path.
 
 ## Agent rules
 
@@ -64,6 +64,6 @@ Public repo. Link back to the commit (or compare view) in each patch note. Forma
 
 ## See also
 
-- [README.md](README.md), [docs/FEATURES.md](docs/FEATURES.md), [docs/codegen.md](docs/codegen.md), [.coily/coily.yaml](.coily/coily.yaml).
+- [README.md](README.md), [docs/FEATURES.md](docs/FEATURES.md), [docs/codegen.md](docs/codegen.md), [../.ward/ward.yaml](../.ward/ward.yaml).
 
 Cross-reference convention from [coilysiren/agentic-os#59](https://github.com/coilyco-flight-deck/agentic-os/issues/59).

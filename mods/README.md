@@ -23,12 +23,12 @@ See also [eco-cycle-prep](https://github.com/coilyco-bridge/eco-cycle-prep) for 
 
 ## Commands
 
-Dev commands are declared in [`.coily/coily.yaml`](.coily/coily.yaml). Run them as `coily exec <verb>`.
+Dev commands are declared in [../.ward/ward.yaml](../.ward/ward.yaml). Run them as `ward exec <verb>`.
 
 ## See also
 
 - [AGENTS.md](AGENTS.md) - agent-facing operating rules.
 - [docs/FEATURES.md](docs/FEATURES.md) - inventory of what ships today.
-- [.coily/coily.yaml](.coily/coily.yaml) - allowlisted commands. Agents route through coily, not bare `make` / `uv` / `python` / `npm` / `cargo` / `dotnet`.
+- [../.ward/ward.yaml](../.ward/ward.yaml) - allowlisted commands. Agents route through Ward, not bare `uv` / `python` / `npm` / `cargo` / `dotnet`.
 
 Cross-reference convention from [coilysiren/agentic-os-kai#313](https://github.com/coilyco-bridge/agentic-os-kai/issues/313).
