@@ -44,6 +44,10 @@ commands:
   bunwulf-structural:
     run: bash mods/scripts/ward-command.sh bunwulf-structural
     description: Regenerate BunWulfStructural recipes from recipes.yml.
+
+agent:
+  workflow: merge-remote-main
+
 catalog:
   kind: Component
   type: mod
