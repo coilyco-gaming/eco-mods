@@ -45,9 +45,6 @@ commands:
     run: bash mods/scripts/ward-command.sh bunwulf-structural
     description: Regenerate BunWulfStructural recipes from recipes.yml.
 
-agent:
-  workflow: merge-remote-main
-
 catalog:
   description: "Eco gameplay mods and Unity assets for the gaming stack."
   dependsOn:
