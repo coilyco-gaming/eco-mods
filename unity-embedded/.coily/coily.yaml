@@ -1,11 +1,6 @@
 commands: {}
 
 catalog:
-  kind: Component
-  type: configuration
-  system: eco
-  owner: kai
-  lifecycle: production
   dependsOn: []
   providesApis: []
   description: "Pre-built Unity asset bundles for eco-mods, ready to embed in mod releases."
