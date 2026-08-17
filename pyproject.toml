@@ -1,15 +1,21 @@
 [tool.agentic-os.repo-pointer-skills]
 org = "coilyco-gaming"
 
-# mods/ carries one public listing README per mod, the copy that ships to
-# mod.io, and unity/ vendors the EcoModKit SDK with its upstream docs. Neither
-# shape is this repo's to choose, mirroring eco-app and eco-ops.
 [tool.agentic-os.documentation-layout]
 band = "small"
+# Placement only. excludes stopped reaching the size caps in agentic-os#1108.
 excludes = [
   "mods/",
   "unity/",
   "unity-embedded/",
+]
+# Size only, and the reason belongs here. unity/Assets/EcoModKit/ is the Eco
+# SDK as upstream ships it, so cutting its docs forks them. Each mod under
+# mods/Mods/UserCode/ carries the README that renders as its mod.io store page,
+# so cutting one changes what a player reads. Neither shape is ours to choose.
+vendored = [
+  "unity/Assets/EcoModKit/",
+  "mods/Mods/UserCode/",
 ]
 
 # The managed markers are stamped inside the pre-commit YAML and
