@@ -263,12 +263,12 @@ public static class UnityGameObjectUtils
     /// <summary>Retrieves an int <see cref="List{T}"/> from the user's PlayerPrefs.</summary>
     /// <param name="key">Key of the player pref to retrieve.</param>
     /// <returns>List containing the items loaded from PlayerPrefs.</returns>
-    public static List<int> GetIntArrayFromPrefs(this string key) => 
-        PlayerPrefs.HasKey(key) ? 
+    public static List<int> GetIntArrayFromPrefs(this string key) =>
+        PlayerPrefs.HasKey(key) ?
             PlayerPrefs
                 .GetString(key)
                 .Split(',')
-                .Select(x => Convert.ToInt32(x)).ToList() : 
+                .Select(x => Convert.ToInt32(x)).ToList() :
             new List<int>();
 
     /// <summary>Retrieves a string <see cref="List{T}"/> from the user's PlayerPrefs.</summary>
@@ -817,11 +817,11 @@ public static class UnityGameObjectUtils
     public static Bounds? GetAvailableBounds(this GameObject targetObj) => targetObj.GetComponentInChildren<Collider>(true)?.bounds ?? targetObj.GetComponentInChildren<Renderer>()?.bounds;
 
     /// <summary>Merges together all the collider bounds on a gameobject and returns it.</summary>
-    public static Bounds? GetCosolidatedBounds(this GameObject targetObj) 
-    { 
+    public static Bounds? GetCosolidatedBounds(this GameObject targetObj)
+    {
         Bounds? bounds = null;
         foreach(var collider in targetObj.GetComponentsInChildren<Collider>())
-        { 
+        {
             if (bounds == null) bounds = collider.bounds;
             else                bounds = bounds.Value.Merge(collider.bounds);
         }
@@ -831,8 +831,8 @@ public static class UnityGameObjectUtils
     /// <summary>Create a new bounds that minimally covers the two passed bounds.</summary>\
     public static Bounds Merge(this Bounds bounds, Bounds other)
     {
-        return new Bounds() 
-        { 
+        return new Bounds()
+        {
             min = new Vector3(Math.Min(bounds.min.x, other.min.x),
                               Math.Min(bounds.min.y, other.min.y),
                               Math.Min(bounds.min.z, other.min.z)),

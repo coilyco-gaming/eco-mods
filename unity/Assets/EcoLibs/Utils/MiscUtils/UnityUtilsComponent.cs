@@ -342,7 +342,7 @@ public static class UnityUtilsComponent
         if (target == null) target = go.AddComponent<T>();
         return target;
     }
-    
+
     public static T IfComponentExists<T>(this GameObject obj, Action<T> func)
     {
         var comp = obj.GetComponent<T>();

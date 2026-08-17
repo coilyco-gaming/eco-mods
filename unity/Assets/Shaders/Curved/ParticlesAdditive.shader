@@ -14,12 +14,12 @@ Category {
 
 	SubShader {
 		Pass {
-		
+
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
             #pragma multi_compile __ FIRSTPERSONVIEW
-			
+
 			#include "UnityCG.cginc"
 			#include "../../EcoModKit/Shaders/CurvedHelper.cginc"
 
@@ -41,7 +41,7 @@ Category {
 				float4 projPos : TEXCOORD2;
 				#endif
 			};
-			
+
 			float4 _MainTex_ST;
 
 			v2f vert (appdata_t v)
@@ -50,7 +50,7 @@ Category {
 
 				v2f o;
 				o.vertex = UnityObjectToClipPos(v.vertex);
-				
+
 				#ifdef SOFTPARTICLES_ON
 				o.projPos = ComputeScreenPos (o.vertex);
 				COMPUTE_EYEDEPTH(o.projPos.z);
@@ -63,7 +63,7 @@ Category {
 
 			sampler2D_float _CameraDepthTexture;
 			float _InvFade;
-			
+
 			fixed4 frag (v2f i) : SV_Target
 			{
 				#ifdef SOFTPARTICLES_ON
@@ -72,12 +72,12 @@ Category {
 				float fade = saturate (_InvFade * (sceneZ-partZ));
 				i.color.a *= fade;
 				#endif
-				
+
 				fixed4 col = 2.0f * i.color * _TintColor * tex2D(_MainTex, i.texcoord);
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				return col;
 			}
-			ENDCG 
+			ENDCG
 		}
 	}
 }

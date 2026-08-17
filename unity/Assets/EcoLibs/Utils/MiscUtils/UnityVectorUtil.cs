@@ -19,8 +19,8 @@ public static class VectorUtil
 
     public static Vector3 SetAxis(this Vector3 vec, Axis a, float val)
     {
-        switch(a) 
-        {  
+        switch(a)
+        {
             case Axis.X: vec.x = val; return vec;
             case Axis.Y: vec.y = val; return vec;
             case Axis.Z: vec.z = val; return vec;
@@ -113,7 +113,7 @@ public static class VectorUtil
         var z       = vec.z * Mathf.Cos(radians) - vec.x * Mathf.Sin(radians);
         return new Vector3(x, y, z);
     }
-    
+
     /// Taken from https://stackoverflow.com/questions/51905268/how-to-find-closest-point-on-line
     /// <summary> Given a point and a line, it returns the closest point on the line to the reference point</summary>
     public static Vector3 GetClosestPointOnInfiniteLine(Vector3 point, Vector3 line_start, Vector3 line_end) => line_start + Vector3.Project(point - line_start, line_end - line_start);

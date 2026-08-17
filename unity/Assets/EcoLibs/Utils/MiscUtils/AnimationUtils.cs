@@ -18,11 +18,11 @@ public class AnimationUtils : TrackableBehavior
 {
 	public bool playRadomAnim;
 
-	public List<AnimMap> animMap; 
+	public List<AnimMap> animMap;
 
 	private Animation animationComponent;
 
-	void Start () 
+	void Start ()
 	{
 		//initialize:
 		animationComponent = gameObject.GetComponent<Animation> ();

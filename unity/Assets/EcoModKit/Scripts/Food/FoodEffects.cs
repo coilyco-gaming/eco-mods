@@ -22,7 +22,7 @@ public class FoodEffects : TrackableBehavior
 {
     [Tooltip("Should the interaction effects play all at once or in a sequence with each bite?")]
     public bool                 sequenceInteractionEffects;
-    [Tooltip("Interaction Particles are for when the player interacts with the food before taking a bite. eg. spoon entering soup")] 
+    [Tooltip("Interaction Particles are for when the player interacts with the food before taking a bite. eg. spoon entering soup")]
     public ParticleSystem[]     interactionParticleSystems;
     [Space(20f)][Tooltip("Should the bite effects play all at once or in a sequence with each bite?")]
     public bool                 sequenceBiteEffects;
@@ -47,8 +47,8 @@ public class FoodEffects : TrackableBehavior
         Hard,
         Soft,
     }
-    
-    // Used to send the interaction sound type to Wwise 
+
+    // Used to send the interaction sound type to Wwise
     public enum InteractionSoundType
     {
         None,

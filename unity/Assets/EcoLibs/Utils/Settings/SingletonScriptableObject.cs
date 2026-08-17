@@ -32,7 +32,7 @@ namespace Eco.Client.Utils.Settings
                 UnityEditor.AssetDatabase.CreateAsset(inst, inst.Path);
                 UnityEditor.AssetDatabase.SaveAssets();
 #else
-                throw new System.Exception($"Missing ScriptableObject {nameof(T)}!");   // throw error if SO is missing in standalone   
+                throw new System.Exception($"Missing ScriptableObject {nameof(T)}!");   // throw error if SO is missing in standalone
 #endif
             }
 

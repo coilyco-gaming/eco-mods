@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 990562a2c7a14518b8146acf97468d94, type: 3}
   m_Name: Animset_WoodenShovel
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   OverrideStates:
   - State: FPV_Hands_Idle
     Clip: {fileID: 1827226128182048838, guid: cfee57b56f4fa5042bcded5cf3aa16ad, type: 3}

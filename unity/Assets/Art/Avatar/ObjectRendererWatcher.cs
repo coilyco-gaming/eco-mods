@@ -9,9 +9,9 @@ namespace Eco.Client
         [SerializeField] Renderer source;
 
         bool cachedState;
-        
+
         [SerializeField] GameObject[] targets = Array.Empty<GameObject>();
-        
+
         void Start() => this.cachedState = !this.source.enabled;
 
         void Update()

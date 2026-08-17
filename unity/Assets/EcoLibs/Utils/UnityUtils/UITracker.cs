@@ -10,6 +10,6 @@ namespace Eco.Client.UnityUtils
     {
         protected override void OnBeforeTransformParentChanged() { base.OnBeforeTransformParentChanged(); }
         protected override void OnRectTransformDimensionsChange() { base.OnRectTransformDimensionsChange(); }
-        
+
     }
 }

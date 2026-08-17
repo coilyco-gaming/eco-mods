@@ -8,14 +8,14 @@ public class PoolMeshOnDestroy : TrackableBehavior
 {
     [NonSerialized]
     private Mesh mesh;
-    
+
     /// <summary>
     /// The mesh that we want to be returned to <see cref="MeshPool"/> when this gameObject is destroyed.
     /// </summary>
     public Mesh Mesh => this.mesh;
 
     public void OnDestroy() => ClearMesh();
-    
+
     /// <summary>
     /// Set mesh that needs to be returned to <see cref="MeshPool"/> when this is destroyed.
     /// </summary>
@@ -25,11 +25,11 @@ public class PoolMeshOnDestroy : TrackableBehavior
     public void SetMesh(Mesh newMesh, bool alsoSetMeshFilter = false, bool returnOldMeshToPool = true)
     {
         if (this.mesh == newMesh) return;
-        
+
         // When setting this.mesh to a new value, we might want to return the old mesh to MeshPool.
         if (returnOldMeshToPool)
             ClearMesh();
-        
+
         // We might also want to set MeshFilter attached to this gameobject to that mesh.
         if (alsoSetMeshFilter)
         {
@@ -39,10 +39,10 @@ public class PoolMeshOnDestroy : TrackableBehavior
             else
                 Debug.LogWarning($"There is no MeshFilter component attached to {gameObject.name}");
         }
-        
+
         this.mesh = newMesh;
     }
-    
+
     /// <summary>
     /// Return this.<see cref="mesh"/> to <see cref="MeshPool"/> to reuse later. This is automatically called
     /// in <see cref="OnDestroy"/>.
@@ -50,7 +50,7 @@ public class PoolMeshOnDestroy : TrackableBehavior
     public void ClearMesh()
     {
         if (this.mesh == null) return; // sliced meshes may be null
-        
+
         MeshPool.Add(this.mesh);
         this.mesh = null;
     }

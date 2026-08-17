@@ -16,7 +16,7 @@ namespace EcoModKit.Occupancy
 
         //Color to use so that the gizmos are visible and able to be diferentiated from each other
         Color[] defaultColors = new Color[] { Color.red, Color.green, Color.blue, Color.yellow, Color.cyan, Color.magenta, Color.white, Color.black };
-        
+
         private void OnDrawGizmosSelected()
         {
             //Early return if there nothing to draw
@@ -41,7 +41,7 @@ namespace EcoModKit.Occupancy
     #endif
     }
 
-    /// <summary> Contains the properties needed for defining a positions requirement in the server side, it contains a list of positions, some predefined requirements and 
+    /// <summary> Contains the properties needed for defining a positions requirement in the server side, it contains a list of positions, some predefined requirements and
     /// a message in case the requirement fails. E.g, The IronShipyard has a water positions requirement on certain positions</summary>
     [Serializable]
     public class PositionsRequirement

@@ -13,18 +13,18 @@ using UnityEditor.SceneManagement;
 class CustomBuilderEditor : Editor
 {
     CustomBuilder customBuilder;
-    
+
     void OnEnable() => customBuilder = (CustomBuilder)this.target;
-    
+
     public override void OnInspectorGUI()
-    {        
+    {
         if (GUILayout.Button("Open Editor"))                CustomBuilderEditorWindow.Open(customBuilder);
-        
+
         if (GUILayout.Button("Create Lod Groups"))          CustomBuilderUtilities.CreateLodGroups(customBuilder);
 
         base.OnInspectorGUI();
-    }    
-    
+    }
+
     void OnValidate()
     {
         // Check to make sure that every mesh usage case has a valid mesh data.
@@ -80,7 +80,7 @@ public class MeshUsageCaseEditorComponent : MonoBehaviour
             firstSelected = false;
         }
         else
-        { 
+        {
             color = new Color(1, 1, 1, .125f);
 
             if (condition != null && condition.rules.Count > 0)
@@ -110,7 +110,7 @@ public class MeshUsageCaseEditorComponent : MonoBehaviour
     }
 }
 
-public class CustomBuilderEditorWindow : EditorWindow 
+public class CustomBuilderEditorWindow : EditorWindow
 {
     CustomBuilder target;
     MeshUsageCase selectedUsageCase;
@@ -120,7 +120,7 @@ public class CustomBuilderEditorWindow : EditorWindow
     SceneSetup[] sceneSetup;
     SceneView view;
     Color backgroundColor;
-    
+
 
 
     static public void Open(CustomBuilder bldr)
@@ -131,7 +131,7 @@ public class CustomBuilderEditorWindow : EditorWindow
 
     public void SetTarget(CustomBuilder bldr)
     {
-        target = bldr; 
+        target = bldr;
     }
 
     void OnDestroy()
@@ -147,7 +147,7 @@ public class CustomBuilderEditorWindow : EditorWindow
         var previewScene = EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
 
         previewScene.name = "Custom Builder Preview";
-        
+
         if (SceneView.sceneViews.Count == 0) view = EditorWindow.GetWindow<SceneView>();
         else view = SceneView.lastActiveSceneView;
         view.orthographic = false;
@@ -169,11 +169,11 @@ public class CustomBuilderEditorWindow : EditorWindow
         disabledUsageCaseStyle.normal.textColor = Color.black;
         disabledUsageCaseStyle.normal.background = new Texture2D(1, 1);
         disabledUsageCaseStyle.normal.background.SetPixel(0, 0, new Color(0.2f, 0.2f, 0.2f, 1));
-        disabledUsageCaseStyle.normal.background.Apply();               
+        disabledUsageCaseStyle.normal.background.Apply();
     }
 
     void OnGUI()
-    {        
+    {
         CreateRuleObjects();
 
         if (target != null)
@@ -197,7 +197,7 @@ public class CustomBuilderEditorWindow : EditorWindow
 
             JsonUtility.FromJsonOverwrite(json, target);
         }
-        
+
         EditorGUILayout.BeginHorizontal();
         {
             GUILayout.Space(10);
@@ -213,7 +213,7 @@ public class CustomBuilderEditorWindow : EditorWindow
     {
         if (target != null)
         {
-            UpdateRuleObjects();            
+            UpdateRuleObjects();
             EditorUtility.SetDirty(target);
             AssetDatabase.SaveAssetIfDirty(target);
         }
@@ -237,8 +237,8 @@ public class CustomBuilderEditorWindow : EditorWindow
             previewBuilder.SetActive(false);
             return;
         }
-        
-        filter.sharedMesh = selectedUsageCase.mesh.GetComponent<MeshFilter>().sharedMesh;        
+
+        filter.sharedMesh = selectedUsageCase.mesh.GetComponent<MeshFilter>().sharedMesh;
 
         Material tmp = Material.Instantiate(target.previewMaterial);
         tmp.EnableKeyword("NO_CURVE");
@@ -266,7 +266,7 @@ public class CustomBuilderEditorWindow : EditorWindow
 
             bottomLayer = new GameObject("BottomLayer");
             bottomLayer.transform.SetParent(previewBuilder.transform);
-            bottomLayer.transform.localPosition = UnityEngine.Vector3.zero;                                
+            bottomLayer.transform.localPosition = UnityEngine.Vector3.zero;
         }
 
         if (offsetObjects == null)
@@ -317,9 +317,9 @@ public class CustomBuilderEditorWindow : EditorWindow
     }
 
     void UpdatePreviewMesh() => previewMeshObject.transform.rotation = Quaternion.Euler(selectedUsageCase.importRotation);
-   
+
     void UpdateRuleObjects()
-    { 
+    {
         foreach (var offset in offsetObjects.Keys)
         {
             var obj = offsetObjects[offset];
@@ -336,8 +336,8 @@ public class CustomBuilderEditorWindow : EditorWindow
             {
                 Selection.activeObject = obj;
                 obj.SetActive(true);
-            }                       
-            
+            }
+
         }
     }
 
@@ -346,7 +346,7 @@ public class CustomBuilderEditorWindow : EditorWindow
     {
         EditorGUILayout.BeginVertical();
         {
-            
+
             GUILayout.Label("Blocks", EditorStyles.boldLabel);
             scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
 
@@ -358,7 +358,7 @@ public class CustomBuilderEditorWindow : EditorWindow
             }
 
             if (selectedUsageCase == null) EditUsageCase(target.usageCases.FirstOrDefault());
-            
+
             int i = 0;
             int removeIndex = -1;
             int duplicateIndex = -1;
@@ -394,13 +394,13 @@ public class CustomBuilderEditorWindow : EditorWindow
                         if (GUILayout.Button("X", style, GUILayout.Width(20)))
                         {
                             removeIndex = i;
-                            Undo.RecordObject(target, "Remove Usage Case");                            
+                            Undo.RecordObject(target, "Remove Usage Case");
                         }
                         GUI.backgroundColor = backgroundColor;
 
                         EditorGUI.BeginChangeCheck();
                         usageCase.mesh = EditorGUILayout.ObjectField(usageCase.mesh, typeof(GameObject), false) as GameObject;
-                        if (EditorGUI.EndChangeCheck()) EditUsageCase(target.usageCases[i]);                        
+                        if (EditorGUI.EndChangeCheck()) EditUsageCase(target.usageCases[i]);
 
                         if (GUILayout.Button("Edit", style, GUILayout.Width(50)))
                         {
@@ -464,7 +464,7 @@ public class CustomBuilderEditorWindow : EditorWindow
             if (duplicateIndex != -1)
             {
                 MeshUsageCase originalUsageCase = target.usageCases[duplicateIndex];
-                MeshUsageCase copy = new MeshUsageCase();                   
+                MeshUsageCase copy = new MeshUsageCase();
                 copy = originalUsageCase.Clone() as MeshUsageCase;
                 copy.conditions = new List<OffsetCondition>();
 
@@ -519,8 +519,8 @@ public class CustomBuilderEditorWindow : EditorWindow
             {
                 Undo.RecordObject(target, "Add Usage Case");
                 if (selectedIndex == -1) target.usageCases.Insert(0, new MeshUsageCase());
-                else target.usageCases.Insert(selectedIndex, new MeshUsageCase());         
-                EditUsageCase(target.usageCases[selectedIndex]);                           
+                else target.usageCases.Insert(selectedIndex, new MeshUsageCase());
+                EditUsageCase(target.usageCases[selectedIndex]);
                 OnChange();
             }
         }
@@ -530,9 +530,9 @@ public class CustomBuilderEditorWindow : EditorWindow
 
     // Makes sure scene view is active and focused on the preview mesh
     void CenterViewOnPreviewMesh()
-    {                
+    {
         view.Focus();
-        view.Frame(new Bounds(Vector3.zero, Vector3.one * 3));        
+        view.Frame(new Bounds(Vector3.zero, Vector3.one * 3));
     }
 
     // Selects the usage case, updates the preview mesh, and centers the view on the preview mesh
@@ -547,10 +547,10 @@ public class CustomBuilderEditorWindow : EditorWindow
     }
 
     void ResetSelectedOffset()
-    {        
+    {
         topLayerSelection = -1;
         midLayerSelection = -1;
-        bottomLayerSelection = -1;        
+        bottomLayerSelection = -1;
     }
 
     int topLayerSelection = -1;
@@ -606,9 +606,9 @@ public class CustomBuilderEditorWindow : EditorWindow
 
     // Copies rules so they can be pasted into other conditions, used when right clicking on condition ofset buttons in the ui
     void CopyRules(OffsetCondition.Offset offsetType)
-    {               
-        if (selectedCondition == null || selectedCondition.rules.Count == 0 ) copiedRules = null;        
-        else copiedRules = selectedCondition.rules.ToArray();                         
+    {
+        if (selectedCondition == null || selectedCondition.rules.Count == 0 ) copiedRules = null;
+        else copiedRules = selectedCondition.rules.ToArray();
     }
 
     // Pastes copied rules from one condition to another, used when right clicking on condition ofset buttons in the ui
@@ -703,7 +703,7 @@ public class CustomBuilderEditorWindow : EditorWindow
                 if (GUILayout.Button(layers[i], "Button", GUILayout.Width(120)))
                 {
                     GUI.FocusControl(null); // Reset focus so that text fields can be updated on button click
-                    
+
                     // Create right click menu to allow copy and pasting rulesets between conditions
                     if (Event.current.button == 1)
                     {
@@ -716,7 +716,7 @@ public class CustomBuilderEditorWindow : EditorWindow
                         menu.AddItem(new GUIContent("Copy Rules"),  false, () => CopyRules(currentOffset));
                         menu.AddItem(new GUIContent("Paste Rules"), false, () => PasteRules(currentOffset));
                         menu.AddItem(new GUIContent("Clear Rules"), false, () => ClearConditions(selectedCondition));
-                        menu.ShowAsContext();                        
+                        menu.ShowAsContext();
                     }
                     hit = true;
                 }
@@ -729,7 +729,7 @@ public class CustomBuilderEditorWindow : EditorWindow
             GUILayout.EndHorizontal();
         }
         GUILayout.EndVertical();
-        
+
         if (newSelection != selection)
         {
             ResetSelectedOffset();
@@ -746,7 +746,7 @@ public class CustomBuilderEditorWindow : EditorWindow
     {
 
         EditorGUILayout.BeginVertical(GUILayout.Width(400));
-        {            
+        {
             GUILayout.Label("Conditions for " + selectedOffset, EditorStyles.largeLabel);
 
             var condition = selectedUsageCase.conditions.Find(x => x.offsetType == selectedOffset);
@@ -761,7 +761,7 @@ public class CustomBuilderEditorWindow : EditorWindow
                 foreach (var rule in condition.rules)
                 {
                     EditorGUILayout.BeginHorizontal();
-                    {                        
+                    {
                         if (GUILayout.Button("Remove"))
                             removeIndex = i;
                         if (removeIndex == -1) Undo.RecordObject(target, "Undo Rule Change");
@@ -783,7 +783,7 @@ public class CustomBuilderEditorWindow : EditorWindow
                     OnChange();
                 }
             }
-            
+
             if (selectedOffset != OffsetCondition.Offset.Offset_Null && GUILayout.Button("Add New Rule"))
             {
                 if (condition == null)

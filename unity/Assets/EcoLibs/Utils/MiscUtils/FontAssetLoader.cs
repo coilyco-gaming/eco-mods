@@ -36,8 +36,8 @@ public static class FontAssetLoader
         if (!LoadedFontAssets.ContainsKey(font.name))
         {
             // first, try to load local asset if present. If not found create a new asset.
-            var loaded = LoadFontAsset(0, font.name); 
-            if (loaded == null) CreateTMPFontAsset(font.name, font); 
+            var loaded = LoadFontAsset(0, font.name);
+            if (loaded == null) CreateTMPFontAsset(font.name, font);
         }
     }
 
@@ -65,7 +65,7 @@ public static class FontAssetLoader
         }
         CreatedFontAssets.Clear();
     }
-    
+
     /// <summary>Attempts to load a font from the local game resource directory if its present. This method also caches the font for later use.</summary>
     private static TMP_FontAsset LoadFontAsset(int hash, string name)
     {

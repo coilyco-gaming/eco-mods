@@ -26,8 +26,8 @@ public class ModkitPrefabContainerEditor : Editor
     }
 
     /// <summary>
-    /// Check if any objects in the scene are instances of a shared prefab. If a prefab is shared it means we can't 
-    /// apply overrides to as they will get overridden by another instance. Ideally these would be prevab variant 
+    /// Check if any objects in the scene are instances of a shared prefab. If a prefab is shared it means we can't
+    /// apply overrides to as they will get overridden by another instance. Ideally these would be prevab variant
     /// assets, however that's a bit too complicated for this to set up.
     /// </summary>
     private void CheckForShared(ModkitPrefabContainer target)
@@ -196,7 +196,7 @@ public class ModkitPrefabContainerEditor : Editor
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="target"></param>
     /// <param name="folder"></param>

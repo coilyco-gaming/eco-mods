@@ -55,7 +55,7 @@ public static class Vector3Extentions
         var z = Mathf.Clamp(value.z, min.z, max.z);
         return new Vector3(x, y, z);
     }
-    
+
     public static Vector3 Scaled(this Vector3 vector, Vector3 scale) => Vector3.Scale(vector, scale);
 
     public static Vector3 Rotated(this Vector3 vector, Quaternion rotation) => rotation * vector;

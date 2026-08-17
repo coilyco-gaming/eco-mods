@@ -301,7 +301,7 @@ items:
         - Public
         - ReadOnly
     references:
-      ChatEmoteSet: 
+      ChatEmoteSet:
   - id: Global.ChatEmoteSet
     commentId: T:Global.ChatEmoteSet
     language: CSharp
@@ -375,7 +375,7 @@ items:
         VB:
         - Public
       references:
-        ChatEmote: 
+        ChatEmote:
   - id: Global.ChatEmoteSetOld
     commentId: T:Global.ChatEmoteSetOld
     language: CSharp
@@ -449,7 +449,7 @@ items:
         VB:
         - Public
       references:
-        ChatEmote: 
+        ChatEmote:
   - id: Global.EcoLight
     commentId: T:Global.EcoLight
     language: CSharp
@@ -1894,7 +1894,7 @@ items:
         VB:
         - Public
     references:
-      WorldObject: 
+      WorldObject:
   - id: Global.SpecificInteractable
     commentId: T:Global.SpecificInteractable
     language: CSharp
@@ -9086,7 +9086,7 @@ items:
         VB:
         - Public
       references:
-        Block.Material: 
+        Block.Material:
     - id: Global.Block.Materials
       commentId: F:Global.Block.Materials
       language: CSharp
@@ -9152,8 +9152,8 @@ items:
         VB:
         - Public
       references:
-        Block.OverrideMainMaterialTransparency: 
-        Block.Materials: 
+        Block.OverrideMainMaterialTransparency:
+        Block.Materials:
     - id: Global.Block.MinimapColor
       commentId: F:Global.Block.MinimapColor
       language: CSharp

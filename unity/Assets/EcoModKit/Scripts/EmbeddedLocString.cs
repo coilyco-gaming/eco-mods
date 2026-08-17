@@ -11,7 +11,7 @@ public class EmbeddedLocString
 {
     [TextArea(3, 10)]
     public string String;
-    // solution for TextComponents text into formattable localization like  "12 plots. 300 sq m." -> {0} plots. {1} sq m. 
+    // solution for TextComponents text into formattable localization like  "12 plots. 300 sq m." -> {0} plots. {1} sq m.
     public EmbeddedLocStringParameter[] Params = new EmbeddedLocStringParameter[] { };
     public EmbeddedLocString()                                    => this.String = string.Empty;
     public static implicit operator EmbeddedLocString(string val) => new EmbeddedLocString { String = val};
@@ -27,14 +27,14 @@ public class EmbeddedLocString
     }
 
     private string StringParamReplaced(string s) // adds back loc parameters e.g: "{0} plots. {1} sq m." -> "12 plots. 300 sq m."
-    {   
+    {
         Params.ForEachIndex((p, i) => s = s.ReplaceFirst($"{{{i}}}", p.localize ? Localizer.DoStr(p.stringParameter) : p.stringParameter));
         return s;
     }
 }
 
 // simplification TextComponents to replace text into formattable localization like  "12 plots. 300 sq m." -> {0} plots. {1} sq m.
-// this way we dont have to use 4 text components ([12] [plots.] [300] [sq m.]) and use preexisting localizations 
+// this way we dont have to use 4 text components ([12] [plots.] [300] [sq m.]) and use preexisting localizations
 //                                              not loc   loc   not loc   loc
 [Serializable]
 public class EmbeddedLocStringParameter

@@ -71,12 +71,12 @@ Shader "Curved/StandardFade"
             float4 vert(float4 vertex : POSITION) : SV_POSITION
             {
                 vertex = curveVertex(vertex, unity_ObjectToWorld, unity_WorldToObject);
-                return UnityObjectToClipPos(vertex); 
+                return UnityObjectToClipPos(vertex);
             }
 
             fixed4 frag() : SV_Target
-            { 
-                return 0; 
+            {
+                return 0;
             }
             ENDCG
         }
@@ -333,12 +333,12 @@ Shader "Curved/StandardFade"
             float4 vert(float4 vertex : POSITION) : SV_POSITION
             {
                 vertex = curveVertex(vertex, unity_ObjectToWorld, unity_WorldToObject);
-                return UnityObjectToClipPos(vertex); 
+                return UnityObjectToClipPos(vertex);
             }
 
             fixed4 frag() : SV_Target
-            { 
-                return 0; 
+            {
+                return 0;
             }
             ENDCG
         }

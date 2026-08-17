@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 /// <summary> Allows to setup OnEnable and OnDisable handlers in the Inspector menu. </summary>
 public class OnEnableRetranslator : TrackableBehavior
-{   
+{
     [Serializable] public class BoolEvent : UnityEvent<bool> { } // UnityEvent<bool> won't be visible in the Inspector by itself.  So we need to create an inherited class with a [Serializable] attribute
 
     /// <summary> Sends object's state (when it changes) to handlers. </summary>

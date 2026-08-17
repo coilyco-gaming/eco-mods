@@ -42,7 +42,7 @@ public static class MathUtils
     public static Transform GetClosestTransform(this IEnumerable<Transform> list, Vector3 targetPos, Transform defaultResult = null)
     {
         if (list == null || !list.Any()) return defaultResult;
-        
+
         Transform closest = null;
         var lastDistance = Mathf.Infinity;
         foreach (var point in list)
@@ -58,10 +58,10 @@ public static class MathUtils
         if (closest == null) closest = defaultResult;
         return closest;
     }
-    
+
     /// <summary> Percentage to float range convert formula: value = ((max - min) * percentage) + min </summary>
     public static float PercentageToRangeFloat(float percent, float min, float max) => ((max - min) * percent) + min;
-    
+
     /// <summary> Percentage to int range convert formula: value = ((max - min) * percentage) + min </summary>
     public static int PercentageToRangeInt(float percent, int min, int max) => Mathf.RoundToInt(PercentageToRangeFloat(percent, min, max));
 
@@ -70,7 +70,7 @@ public static class MathUtils
     /// Benefits:
     /// - Unlike FromToRotation does not lose the twist angle
     /// - Could limit swing and twist rotations (rotation clamping)
-    /// 
+    ///
     /// Original: https://github.com/TheAllenChou/unity-cj-lib/blob/master/Unity%20CJ%20Lib/Assets/CjLib/Script/Math/QuaternionUtil.cs
     /// </summary>
     public static void DecomposeSwingTwist(Quaternion q, Vector3 twistAxis, out Quaternion swing, out Quaternion twist)
@@ -99,7 +99,7 @@ public static class MathUtils
             return;
         }
 
-        // formula & proof: 
+        // formula & proof:
         // http://www.euclideanspace.com/maths/geometry/rotations/for/decomposition/
         var p = Vector3.Project(r, twistAxis);
         twist = new Quaternion(p.x, p.y, p.z, q.w);

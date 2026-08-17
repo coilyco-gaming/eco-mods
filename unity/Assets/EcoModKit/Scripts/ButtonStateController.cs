@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace EcoModKit.Interactions.Buttons
 {
-    /// <summary> Class that handles logic for enabled/disabled states in buttons, it makes sure to set the interactable collider to the correct layer so as to prevent undesirable behaviour when pressing down 
+    /// <summary> Class that handles logic for enabled/disabled states in buttons, it makes sure to set the interactable collider to the correct layer so as to prevent undesirable behaviour when pressing down
     /// interactable key during multiple frames. It also handles the visual states by enabling/disabling the correspondent meshes(if they are set).</summary>
     public class ButtonStateController : TrackableBehavior
     {
-        [SerializeField, Tooltip("Mesh to show when setting the button status to true, meaning the button can be pressed(optional).")] 
+        [SerializeField, Tooltip("Mesh to show when setting the button status to true, meaning the button can be pressed(optional).")]
         MeshRenderer buttonUnpressed;
         [SerializeField, Tooltip("Mesh to show when setting the button status to false, meaning the button is already pressed(optional).")]
         MeshRenderer buttonPressed;
@@ -24,7 +24,7 @@ namespace EcoModKit.Interactions.Buttons
             this.defaultLayer = LayerMask.NameToLayer("Default");
             this.blockSelectionLayer = LayerMask.NameToLayer("BlockSelection");
         }
-    
+
         /// <summary> Allows/Blocks button interaction, and enables/disables the meshes accordingly if they happen to be set.</summary>
         public void SetButtonStatus(bool status)
         {

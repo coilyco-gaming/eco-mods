@@ -226,7 +226,7 @@ public static class UnityUtilsParentage
 
         return true;
     }
-    
+
     public static GameObject FindChildFromRoot(this GameObject parent, GameObject child)	// Traverse GameObject looking for child by INDEX
     {
         if (parent && child)
@@ -238,7 +238,7 @@ public static class UnityUtilsParentage
         return null;
     }
 
-	// Traverses all parents to build hierarchy path until root, includes child 
+	// Traverses all parents to build hierarchy path until root, includes child
 	// e.g.:
 	//	A(0) <- root
 	//		A.1(0)
@@ -246,7 +246,7 @@ public static class UnityUtilsParentage
 	//			A.2.1(0) <- child
 	// path is {0, 1, 0}
 	//		 child -> root
-	public static List<Transform> GetPathToChild(this GameObject child)	
+	public static List<Transform> GetPathToChild(this GameObject child)
     {
         var currentParent = child.transform;
         var parents = new List<Transform>() { child.transform };
@@ -268,10 +268,10 @@ public static class UnityUtilsParentage
     //		B.2(1)
     //			B.2.1(0) <- wanted gameobject
     //	C(2)
-    //	
+    //
     //	path would be {1, 1, 0} from root to wanted gameobject
     //
-    public static GameObject GetChildAtPath(this GameObject parent, int[] indexesPath) 
+    public static GameObject GetChildAtPath(this GameObject parent, int[] indexesPath)
     {
         Transform child = parent.transform;
         foreach (var i in indexesPath) child = child.GetChild(i);

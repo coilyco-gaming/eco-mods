@@ -22,7 +22,7 @@ public class LocalPool : TrackableBehavior
         if (lastSibling) entry.transform.SetAsLastSibling();
         else             entry.transform.SetAsFirstSibling();
         active.Add(entry);
-        return entry;        
+        return entry;
     }
 
     /// <summary> Return an object back to the pool and disable it. </summary>

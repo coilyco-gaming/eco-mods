@@ -14,7 +14,7 @@
     {
         BiteableFoodObject data;
         GameObject platePreview;
-        
+
         int sequenceProgressPreviewStep = 0;
 
         void OnEnable()
@@ -23,7 +23,7 @@
             PrefabStage.prefabSaved += OnPrefabSaved;
             PrefabStage.prefabStageClosing += OnFinishEdit;
         }
-        
+
         void OnDisable()
         {
             PrefabStage.prefabSaved -= OnPrefabSaved;
@@ -38,21 +38,21 @@
 
             // Early quit if setup went wrong
             if (this.data.FoodParts == null || this.data.FoodParts.Length == 0) return;
-            
+
             // Draw info and preview button for plate
             if (this.data.PlateTemplate != null) this.DrawPlatePreview();
-            
+
             // Draw slider to preview bite states in editor
             this.DrawPreviewSlider();
-            
+
             // Draw button, that will add components for FPV (boilerplate speedup)
             this.DrawComponentSetupButton();
             this.DrawEffectsSetupButton();
-            
+
             if (!Application.isPlaying)
                 EditorGUILayout.HelpBox("Enter play mode to unlock animation button", MessageType.Info);
             else
-            { 
+            {
                 // Allow to trigger animation sequence in editor
                 this.DrawNextBiteButton();
                 this.DrawNexFoodButton();
@@ -76,11 +76,11 @@
                 // Spawn plate as it should do in runtime, but temporary (just for preview)
                 this.platePreview = Instantiate(this.data.PlateTemplate, this.data.transform);
                 this.platePreview.name = "PLATE PREVIEW. Delete this.";
-                
+
                 // Add selection changed event subscription safely when we added preview object to scene
                 Selection.selectionChanged -= OnSelectionChanged;
                 Selection.selectionChanged += OnSelectionChanged;
-            }        
+            }
         }
 
         // Simplifies setup for food with adding interaction components
@@ -92,7 +92,7 @@
                 this.data.gameObject.GetOrAddComponent<ItemAnimationData>();
                 EditorUtility.SetDirty(this.data);
             }
-            
+
             if (GUILayout.Button("Add TPV components"))
             {
                 this.data.gameObject.GetOrAddComponent<ItemAnimationData>();
@@ -100,7 +100,7 @@
             }
             EditorGUILayout.EndHorizontal();
         }
-        
+
         // Simplifies setup for food with adding effects components
         void DrawEffectsSetupButton()
         {
@@ -135,7 +135,7 @@
                 this.sequenceProgressPreviewStep = nextIndex;
             }
         }
-        
+
         // Tries to pool food parts automatically and put them in same order as in fbx file. Should help in 95% of setups
         void DrawSetupButton()
         {
@@ -150,7 +150,7 @@
                 EditorUtility.SetDirty(this.data);
             }
         }
-        
+
         // This one is only for food test scene to switch between active game objects faster ion one click
         void DrawNexFoodButton()
         {
@@ -159,11 +159,11 @@
                 var mainObject = this.data.transform.parent;
                 var objects = new List<Transform>();
                 for (var i = 0; i < mainObject.childCount; i++) objects.Add(mainObject.GetChild(i));
-                
+
                 var activeFood = objects.FirstOrDefault(x => x.gameObject.activeInHierarchy);
                 var activeIndex = 0;
                 if (activeFood != null) activeIndex = objects.IndexOf(activeFood);
-                
+
                 foreach (var obj in objects) obj.gameObject.SetActive(false);
                 activeIndex++;
                 if (activeIndex >= objects.Count) activeIndex = 0;

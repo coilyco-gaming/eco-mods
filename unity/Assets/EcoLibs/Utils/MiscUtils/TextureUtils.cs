@@ -39,7 +39,7 @@ public static class TextureUtils
         RenderTexture.active = renderTexture;
         texture.ReadPixels(new Rect(Vector2.zero, resolution), 0, 0);
         RenderTexture.active = null;
-        
+
         //Clear temporary data and apply into new texture
         RenderTexture.ReleaseTemporary(renderTexture);
         texture.Apply(true, false);
@@ -53,17 +53,17 @@ public static class TextureUtils
 
 
     /// <summary> Fits the source RectTransform to the target RectTransform while maintaining the specified aspect ratio. </summary>
-    public static void FitRectTransform(this RectTransform source, RectTransform target, float sourceAspectRatio) 
+    public static void FitRectTransform(this RectTransform source, RectTransform target, float sourceAspectRatio)
     {
         float targetAspectRatio = target.rect.width / target.rect.height;
         float w, h;
 
-        if (sourceAspectRatio >= targetAspectRatio) 
+        if (sourceAspectRatio >= targetAspectRatio)
         {
             w = target.rect.width; //Keep same width and recalculate new height
             h = Mathf.RoundToInt(w * (1f / sourceAspectRatio));
         }
-        else 
+        else
         {
             h = target.rect.height;
             w = Mathf.RoundToInt(h * sourceAspectRatio);
@@ -140,7 +140,7 @@ public static class TextureExtensions
             outputW = sourceW; //Keep same width and recalculate new height
             outputH = Mathf.RoundToInt(outputW * (1f / outputAR));
             offsetY = Mathf.RoundToInt(Mathf.Lerp(0, sourceH - outputH, offset));
-        } else 
+        } else
         {
             outputH = sourceH;
             outputW = Mathf.RoundToInt(outputH * outputAR);
@@ -149,7 +149,7 @@ public static class TextureExtensions
 
         Color32[] sourcePixels = source.GetPixels32(); //Get the pixel data from the source texture
         Color32[] roiPixels = new Color32[outputW * outputH];
-            
+
         //Create a new texture to hold the ROI (Region Of Interest)
         Texture2D output = new (outputW, outputH, TextureFormat.RGBA32, false);
 
@@ -190,7 +190,7 @@ public static class TextureExtensions
             outputW = sourceW; //Keep same width and recalculate new height
             outputH = Mathf.RoundToInt(outputW * (1f / outputAR));
             offsetY = (outputH - sourceH) / 2;
-        } else 
+        } else
         {
             outputH = sourceH;
             outputW = Mathf.RoundToInt(outputH * outputAR);

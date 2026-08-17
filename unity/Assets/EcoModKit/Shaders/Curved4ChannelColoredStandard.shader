@@ -54,7 +54,7 @@ Shader "Curved/Standard 4 Channel Colored"
         #define UNITY_SETUP_BRDF_INPUT MetallicSetup
     ENDCG
 
-    SubShader 
+    SubShader
     {
         Name "Color"
         Tags { "LightMode" = "Opaque" }
@@ -221,7 +221,7 @@ Shader "Curved/Standard 4 Channel Colored"
             #pragma shader_feature_local _METALLICGLOSSMAP
             #pragma shader_feature_local _PARALLAXMAP
             #pragma instancing_options assumeuniformscaling lodfade procedural:IndirectRenderingSetup
-            
+
             #pragma multi_compile_shadowcaster
             #pragma multi_compile_instancing
             #pragma multi_compile _ LOD_FADE_CROSSFADE
@@ -455,9 +455,9 @@ Shader "Curved/Standard 4 Channel Colored"
             #pragma shader_feature_local _ _ALPHATEST_ON _ALPHABLEND_ON _ALPHAPREMULTIPLY_ON
             #pragma shader_feature_local _METALLICGLOSSMAP
             #pragma instancing_options assumeuniformscaling lodfade procedural:IndirectRenderingSetup
-            
+
             #pragma skip_variants SHADOWS_SOFT
-            
+
             #pragma multi_compile_shadowcaster
             #pragma multi_compile __ FIRSTPERSONVIEW
 

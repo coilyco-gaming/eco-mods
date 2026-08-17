@@ -41,7 +41,7 @@ namespace Eco.Client.Utils
 
                 var currentCharacterIndex = linkInfo.linkTextfirstCharacterIndex; //We initialize the index with the index of the first character in the link.
                 if (currentCharacterIndex < 0 || currentCharacterIndex >= text.textInfo.characterInfo.Length) continue;    //If its for some reason a bad index, skip next step
-                
+
                 //The idea here is to check whether the link is a single line or a multi-lines link and if it's the latter, we check every line that still have that link.
                 //Note : You are maybe thinking "Why not just take the first and last characters of the link and then just check it once" and the reason is multi-lines links (I let you think that through :) ).
                 do
@@ -49,7 +49,7 @@ namespace Eco.Client.Utils
                     lastIndexInCurrentLine = text.textInfo.lineInfo[currentLineIndex].lastCharacterIndex; //We get the last character in the current line.
 
                     var firstCharacter          = text.textInfo.characterInfo[currentCharacterIndex]; //We get the first character in the link or in the line.
-                    
+
                     //If the last character in the link is on the same line as the first we get it else we get the last character in the current line.
                     var lastIndex = Mathf.Min(lastIndexInLink, lastIndexInCurrentLine);
                     var lastLinkCharacterInLine = text.textInfo.characterInfo[lastIndex];

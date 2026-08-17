@@ -15,7 +15,7 @@ public class AutohookPropertyDrawer : PropertyDrawer
         {
             // if we found something, AND the autohook is empty, lets slot it.
             // the reason were straight up looking for a target component is so we
-            // can skip drawing the field if theres a valid autohook. 
+            // can skip drawing the field if theres a valid autohook.
             // this just looks a bit cleaner but isn't particularly safe. YMMV
             if (property.objectReferenceValue == null)
                 property.objectReferenceValue = component;

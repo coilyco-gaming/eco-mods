@@ -27,12 +27,12 @@ namespace Eco.Client.Pooling
         public void AddSkipForMismatch<T>() => this.mismatchDetectionContext.SkipMismatches<T>();
 
         Scene poolsScene; // pools scene
-        
+
         public void Initialize()
         {
             UtilCache.RegisterConsoleCommand(this, nameof(this.DetectPoolIssues));
             UtilCache.SubscribePostDisconnectionEventPermanently(this.ClientEvents_OnDisconnectEvent);
- 
+
             this.mismatchDetectionContext = this.CreateMismatchDetectionContext();
             this.poolsScene                =  SceneManager.CreateScene("Pools", new CreateSceneParameters(LocalPhysicsMode.None));
         }

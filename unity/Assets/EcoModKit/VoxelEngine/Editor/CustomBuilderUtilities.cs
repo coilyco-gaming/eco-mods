@@ -37,7 +37,7 @@ public class CustomBuilderUtilities
                 if (lodGroup == null || usageCase.blockMeshLodGroup != lodGroup)
                 {
                     Debug.Log("Updating existing LOD group in usage case");
-                    usageCase.blockMeshLodGroup = lodGroup;                    
+                    usageCase.blockMeshLodGroup = lodGroup;
                 }
                 UpdateLodGroup(lodGroup, GetLodMeshes(usageCase.mesh));
             }
@@ -76,7 +76,7 @@ public class CustomBuilderUtilities
 
     // Get all the Lod Group Meshes from the game object specified in the usage case
     static lodGroupMeshes GetLodMeshes(GameObject GO)
-    {        
+    {
         Transform[] children = GO.GetComponentsInChildren<Transform>();
         lodGroupMeshes meshes = new lodGroupMeshes();
 
@@ -94,7 +94,7 @@ public class CustomBuilderUtilities
                 else if (child.gameObject == GO) meshes.lod0Mesh            = mesh; // Handle the base mesh
                 else // Handle unexpected naming
                 {
-                    Debug.LogError("Unexpected mesh name: " + meshName);                    
+                    Debug.LogError("Unexpected mesh name: " + meshName);
                 }
             }
         }
@@ -107,10 +107,10 @@ public class CustomBuilderUtilities
         BlockMeshLodGroup lodGroup = ScriptableObject.CreateInstance<BlockMeshLodGroup>();
         lodGroup.name = meshes.lod0Mesh != null ? meshes.lod0Mesh.name : "NewLodGroup";
 
-        if (meshes.lod0Mesh != null)        lodGroup.LOD0[0].mesh   = meshes.lod0Mesh;        
-        if (meshes.lod1Mesh != null)        lodGroup.LOD1.mesh      = meshes.lod1Mesh;        
-        if (meshes.lod2Mesh != null)        lodGroup.LOD2.mesh      = meshes.lod2Mesh;        
-        if (meshes.colliderMesh != null)    lodGroup.Collider       = meshes.colliderMesh;        
+        if (meshes.lod0Mesh != null)        lodGroup.LOD0[0].mesh   = meshes.lod0Mesh;
+        if (meshes.lod1Mesh != null)        lodGroup.LOD1.mesh      = meshes.lod1Mesh;
+        if (meshes.lod2Mesh != null)        lodGroup.LOD2.mesh      = meshes.lod2Mesh;
+        if (meshes.colliderMesh != null)    lodGroup.Collider       = meshes.colliderMesh;
 
         return lodGroup;
     }
@@ -137,7 +137,7 @@ public class CustomBuilderUtilities
 
                 foreach (var cond in useageCase.conditions)                                         // Loop through each condition so we can change the direction of the rules to match the new rotation
                 {
-                    Vector3 originalVector = OffsetCondition.OffsetMapping[(int)cond.offsetType];   // Get the mapped vector3 for the current offset eg. Offset_020 = (-1, 1, -1) 
+                    Vector3 originalVector = OffsetCondition.OffsetMapping[(int)cond.offsetType];   // Get the mapped vector3 for the current offset eg. Offset_020 = (-1, 1, -1)
                     Vector3 newRotation = originalVector.RotateAroundYClockwise(rotation);          // rotate it by the current rotation
                     cond.offsetType = OffsetCondition.GetFromVector(newRotation);                   // Set the new offsetType by getting it from the the new rotated vector
                 }

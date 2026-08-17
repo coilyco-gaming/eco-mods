@@ -40,7 +40,7 @@ float4 curve(float4 worldPos, float radius, float3 center)
 	worldPos.xz = (s / d) * toVertex.xz;
 	worldPos.y = c;
 
-	// final position 
+	// final position
 	worldPos.xyz = (worldPos.xyz * toVertex.y) + center;
 	return worldPos;
 #endif

@@ -68,8 +68,8 @@ namespace Eco.Client.Utils
             return new Color32(R, G, B, 255);
         }
 
-        public static string Text(this Color color, string s) {return Eco.Shared.Utils.Text.Color(color.ToHex(), s); } 
-        public static string Num(this Color color, float v)   {return Eco.Shared.Utils.Text.Color(color.ToHex(), v.ToString("0.#")); } 
+        public static string Text(this Color color, string s) {return Eco.Shared.Utils.Text.Color(color.ToHex(), s); }
+        public static string Num(this Color color, float v)   {return Eco.Shared.Utils.Text.Color(color.ToHex(), v.ToString("0.#")); }
         public static string Num(this Color color, int v)     {return Eco.Shared.Utils.Text.Color(color.ToHex(), v.ToString()); }
 
         public static Gradient ToGradient(this Color color)  {return new Gradient() { colorKeys = new GradientColorKey[] { new GradientColorKey(color, 0.0f)} }; }

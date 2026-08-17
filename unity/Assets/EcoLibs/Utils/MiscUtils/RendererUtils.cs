@@ -41,7 +41,7 @@ namespace Eco.Client.Utils
                 Bounds screenBounds = new Bounds(screenPoints.First(), Vector3.zero);
                 foreach (Vector3 screenPoint in screenPoints)
                     screenBounds.Encapsulate(screenPoint);
-                
+
                 return RectExtensions.NewFromPoints(screenBounds.min, screenBounds.max);
             }
             else

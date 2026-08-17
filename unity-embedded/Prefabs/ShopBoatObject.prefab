@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c15924752853459490d29011ba18d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   effectorType: 3
   multipliers:
   - curve: 0
@@ -612,8 +612,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34383418d7804dadb8d060b17ebff4f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   DisplacementForceMultiplier: 27
   MaxDisplacementForce: 70
   waterLineOffset: 0.1
@@ -806,8 +806,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34383418d7804dadb8d060b17ebff4f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   DisplacementForceMultiplier: 27
   MaxDisplacementForce: 70
   waterLineOffset: 0.1
@@ -953,8 +953,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34383418d7804dadb8d060b17ebff4f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   DisplacementForceMultiplier: 27
   MaxDisplacementForce: 70
   waterLineOffset: 0.1
@@ -1312,8 +1312,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2736eee4c5f28934c94000bf73bb1719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &145630726873331104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1324,8 +1324,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5ef5fa54cb167144b0c14545efe42ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &2097892751723840034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,8 +1336,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ce3cf79c2a8f3e4a862ca5955bba5f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   targetOverride: {fileID: 0}
   PopupLocation: {fileID: 0}
   seeThrough: 0
@@ -1352,8 +1352,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c59cef326f34c0c9e7781443e48ea1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   extraStateChangedEvents: []
   archetype: {fileID: 0}
   animators: []
@@ -1381,7 +1381,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
   OnEnabled:
@@ -1406,7 +1406,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 9213993983323702105}
@@ -1418,7 +1418,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
@@ -1430,7 +1430,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 1
         m_CallState: 2
   OnInitiallyDisabledOperating:
@@ -1445,7 +1445,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
   OnOperatingChanged:
@@ -1463,7 +1463,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
@@ -1475,7 +1475,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
   OnDisableOperating:
@@ -1490,7 +1490,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
@@ -1502,7 +1502,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
   OnUsingChanged:
@@ -1547,8 +1547,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f00e09c244b35a4689b7a81d8f1edbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   seats:
   - {fileID: 3041061777361465508}
   - {fileID: 0}
@@ -1569,8 +1569,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f54e8250b7f8be445bd95278e492f0d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &1469038622628318786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,8 +1581,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2393e4795a98317429b27975f3803c87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   SyncPos: 1
   SyncVelocity: 1
   UseBaseVelocity: 0
@@ -1608,8 +1608,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd6d2326e5a2ba644bff40ab7f1973a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_listeners:
     initialListenerList: []
     useDefaultListeners: 1
@@ -1630,8 +1630,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e12df35913a4fb39a63fc15e0624781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   VehicleType: WoodenTransportShip
   VehicleSeat: {fileID: 0}
 --- !u!114 &2700499387127251214
@@ -1644,8 +1644,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88300425a13b6914387d60e795b99cee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   PossibleMooragePoints:
   - {fileID: 8503041478783887839}
   - {fileID: 1067929305454055839}
@@ -1661,8 +1661,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33079319b2ee44d5b7d4bf8271163af6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &3175805825013540655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1673,8 +1673,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd62d53eb8364228b6dfd855ab0477fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   MaxAngularVelocity: 0.2
   maxSpeed: 3
 --- !u!114 &6270130648220065068
@@ -1687,8 +1687,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb2a64af50de4084b75342b62ee9336e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   RotationForce: 0.02
   LinearForceMode: 0
   LinearForwardAcceleration: 3400
@@ -1731,8 +1731,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19c20fd801864996ae443aa63cee25f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   VerticalWaterOffset: 1.9
 --- !u!114 &6278003360805707321
 MonoBehaviour:
@@ -1744,8 +1744,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1961cbee18fb4eee8789f735238a333c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &1287247053703252612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,8 +1756,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7693ad1fe3e40b7ab4cdb3669e3d1c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &2740343761176843086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1768,8 +1768,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 084e94e2f62347ceae02395a90ebdac5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   AngularSpeedLimit: 0.3
   AngularDrag: 0.005
   DisableDragOnInput: 1
@@ -1783,8 +1783,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc731516ebfa460b905925927fc44e58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   CounterTiltForce: 2.5
   UpsideDownTurnSpeed: 15000
   TiltedForceMode: 5
@@ -1800,8 +1800,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e2b7957a7234a0480b171786f49174a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   CustomRotationTransform: {fileID: 6406302716311339266}
 --- !u!114 &3438130623881838294
 MonoBehaviour:
@@ -1813,8 +1813,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5daececaa7f6451c8281b45cc409444a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   MaxAngleUpMove: 4
 --- !u!114 &6581459494829597010
 MonoBehaviour:
@@ -1826,8 +1826,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d0d95cae0ec4b7bb74bbc2839fc1071, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   WaterMaskContainer: {fileID: 4402367956881153893}
   WaterMaskObjectToSpawn: {fileID: 919132149155446097, guid: f8d84b33650f71c45bbdaa12a102e29a,
     type: 3}
@@ -1841,8 +1841,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd311454494744159d1005a82f400134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &4718983007789048135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1853,8 +1853,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ee89bf25bd347e4b6b73dee5483149c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   EffectContainer: {fileID: 8438942928300413328}
   MainEffectObject: {fileID: 4624723891629021840, guid: 6133c958798e9e844a438fd956a70feb,
     type: 3}
@@ -1868,8 +1868,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20be06a60748dc940bd7030b246a0be7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   EffectSystemForward: {fileID: 1386124999286655809, guid: eb51c4f5cc0e8b24daf27521f4699312,
     type: 3}
   EffectSystemBackward: {fileID: 1386124999286655809, guid: 5da75c45bc3bea4489aacb2c7eae1fd9,
@@ -1886,8 +1886,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f22cdf8c0f101a3499b9241429819d55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   ignoredColliders: []
 --- !u!114 &9078259641445025257
 MonoBehaviour:
@@ -1899,8 +1899,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23163743475a46e0953184b4fba9d4a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &8779047257472742976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1911,8 +1911,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d703eacc4a440fe4b92bc733a3fd2ebd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &4525514433483318939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1923,8 +1923,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abb3ed913c5cb94499198304fe6212e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   ToggleOn:
     m_PersistentCalls:
       m_Calls:
@@ -1937,7 +1937,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 9213993983323702105}
@@ -1949,7 +1949,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
   ToggleOff:
@@ -1964,7 +1964,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 9213993983323702105}
@@ -1976,7 +1976,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &4264259659156006146
@@ -2023,8 +2023,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92471cc1733c49042be56cd39b4b6e5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   text: This object is used to fine tune the positioning of the mesh inside the occupancy
 --- !u!1 &4266015360946726260
 GameObject:
@@ -2068,8 +2068,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34383418d7804dadb8d060b17ebff4f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   DisplacementForceMultiplier: 27
   MaxDisplacementForce: 70
   waterLineOffset: 0.1
@@ -2172,8 +2172,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34383418d7804dadb8d060b17ebff4f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   DisplacementForceMultiplier: 27
   MaxDisplacementForce: 70
   waterLineOffset: 0.1
@@ -2223,8 +2223,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34383418d7804dadb8d060b17ebff4f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   DisplacementForceMultiplier: 27
   MaxDisplacementForce: 70
   waterLineOffset: 0.1
@@ -2274,8 +2274,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c15924752853459490d29011ba18d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   effectorType: 5
   multipliers: []
   interactionSpeedMlp: 1
@@ -2329,8 +2329,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c15924752853459490d29011ba18d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   effectorType: 8
   multipliers: []
   interactionSpeedMlp: 1
@@ -7228,8 +7228,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c15924752853459490d29011ba18d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   effectorType: 1
   multipliers: []
   interactionSpeedMlp: 1
@@ -7334,8 +7334,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34383418d7804dadb8d060b17ebff4f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   DisplacementForceMultiplier: 27
   MaxDisplacementForce: 70
   waterLineOffset: 0.1
@@ -12846,8 +12846,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c15924752853459490d29011ba18d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   effectorType: 0
   multipliers: []
   interactionSpeedMlp: 1
@@ -12954,8 +12954,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34383418d7804dadb8d060b17ebff4f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   DisplacementForceMultiplier: 27
   MaxDisplacementForce: 70
   waterLineOffset: 0.1
@@ -13005,8 +13005,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34383418d7804dadb8d060b17ebff4f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   DisplacementForceMultiplier: 27
   MaxDisplacementForce: 70
   waterLineOffset: 0.1
@@ -13279,8 +13279,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ce3cf79c2a8f3e4a862ca5955bba5f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   targetOverride: {fileID: 3407009479651782062}
   PopupLocation: {fileID: 0}
   seeThrough: 0
@@ -13295,10 +13295,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71d3f5ef08277854ba1ee6f8ca01e10e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionTargetName: 
-  interactionTargetValue: 
+  m_Name:
+  m_EditorClassIdentifier:
+  interactionTargetName:
+  interactionTargetValue:
   InteractionType: 4
 --- !u!1 &8373198289244680621
 GameObject:
@@ -13404,8 +13404,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c15924752853459490d29011ba18d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   effectorType: 4
   multipliers: []
   interactionSpeedMlp: 1
@@ -13459,8 +13459,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c15924752853459490d29011ba18d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   effectorType: 6
   multipliers: []
   interactionSpeedMlp: 1
@@ -18355,8 +18355,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c15924752853459490d29011ba18d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   effectorType: 7
   multipliers: []
   interactionSpeedMlp: 1
@@ -18471,8 +18471,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26299ccc3a6ac3448b5bb7bba5611b31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   IKTargets:
   - {fileID: 7351733612788365575}
   - {fileID: 951376690749942456}
@@ -18539,8 +18539,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c15924752853459490d29011ba18d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   effectorType: 2
   multipliers: []
   interactionSpeedMlp: 1
@@ -18625,7 +18625,7 @@ PrefabInstance:
     - target: {fileID: 868361953598755160, guid: 56b3128cc7133d542a24d4d56b0d0ffa,
         type: 3}
       propertyPath: worldObject
-      value: 
+      value:
       objectReference: {fileID: 1901461925794871509}
     - target: {fileID: 7371912859629408599, guid: 56b3128cc7133d542a24d4d56b0d0ffa,
         type: 3}
@@ -18714,7 +18714,7 @@ PrefabInstance:
     - target: {fileID: 868361953598755160, guid: 56b3128cc7133d542a24d4d56b0d0ffa,
         type: 3}
       propertyPath: worldObject
-      value: 
+      value:
       objectReference: {fileID: 1901461925794871509}
     - target: {fileID: 7371912859629408599, guid: 56b3128cc7133d542a24d4d56b0d0ffa,
         type: 3}
@@ -18878,7 +18878,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: fb74d93bbd9c87b4ebedb371f4bba7e9,
         type: 3}
       propertyPath: m_Controller
-      value: 
+      value:
       objectReference: {fileID: 9100000, guid: 8169d28eafa9bee45972f5029b099d57, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -18951,8 +18951,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ce3cf79c2a8f3e4a862ca5955bba5f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   targetOverride: {fileID: 0}
   PopupLocation: {fileID: 0}
   seeThrough: 0

@@ -17,11 +17,11 @@ public class OneByOneSequence : FoodBiteSequence
             parts[i].transform.localScale = Vector3.one;
         }
     }
-    
+
     public override GameObject GetCurrentBitePiece(GameObject[] parts)
     {
         // As parts get deactivated one by one on eating, need to return part before first active
-        var prevPart = parts[0]; // For safety 
+        var prevPart = parts[0]; // For safety
         foreach (var part in parts)
             if (part.activeSelf) return prevPart;
             else prevPart = part;

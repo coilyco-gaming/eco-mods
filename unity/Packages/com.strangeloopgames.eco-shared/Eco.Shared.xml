@@ -48,7 +48,7 @@
              var db = new DB();
              Call(Enumerable.Range(1, 10).Select(i => db.GetString(i)).Unscoped()); // error, because this enumerable depends on `db` which then disposed and if enumerable leaves scope of Call method and we will try to use it later then it will fail with error trying to access `db` object
              db.Dispose();
-            
+
              void Call(IScopedEnumerable<string> enumerable)
              {
                  IEnumerable<string> unscoped = enumerable.IsScoped ? enumerable.ToUnscopedCollection() : enumerable;
@@ -433,7 +433,7 @@
         <member name="T:Eco.Shared.Gameplay.EditableOverlay">
             Basic implementation for IEntryOverlay. Used to sent/recieve data at map edit request.
             Note that this type is not a controller, but will be sent back and forth between both client and server, IE the client can edit it and send it back.
-            For example, when a user requests to edit an overlay, the client will send this structure to the server after the edit, containing the changes. 
+            For example, when a user requests to edit an overlay, the client will send this structure to the server after the edit, containing the changes.
         </member>
         <member name="T:Eco.Shared.Gameplay.IListEntryObject">
             <summary> Used for objects that can be represented on client by ListEntry, to populate AutoUIListContainer. </summary>
@@ -461,7 +461,7 @@
              Fast 4 byte item variation of a color for efficient storage and operating inside chunk.
              Allows to store colors more efficiently for each chunk per 1000+ block each
              Good as we do not care about alpha, and has less memory that hex color storage.
-            
+
              Occupies 4 times less memory that regular color.
              So for min draw distance in eco it will be small 256kb overhead instead of 1mb of data. (loaded 8x8 chunk grid)
              </summary>
@@ -494,7 +494,7 @@
             <summary> Get hue value of byte color </summary>
         </member>
         <member name="T:Eco.Shared.Utils.PoolableListEnumerator`1">
-            <summary> This allows to iterate through list with return to the pool after end. 
+            <summary> This allows to iterate through list with return to the pool after end.
             Uesfull for iterations over not-thread-safe collections in multithread environment. It will create a copy of collection by using lock and pooled list and it will automaticly return the list after Dispose is called. </summary>
         </member>
         <member name="M:Eco.Shared.Utils.ActionUtils.TryAndCatchError``1(System.Threading.Tasks.Task{``0})">
@@ -884,7 +884,7 @@
         <member name="T:Eco.Shared.Utils.CommandLine">
              <summary>
              Class for getting arguments from command line. Arguments are not case sensitive.
-            
+
              Excpected syntax of parameters:
              * -arg
              * -arg="value"
@@ -1421,7 +1421,7 @@
                  public string SubString { get; set; }
                  public bool Match(string s) => s.Contains(this.SubString);
              }
-            
+
              public static class Test
              {
                  public int CountByFilter<T, TPredicate>(List<T> items, TPredicate filter) where TPredicate : IPredicate<T>
@@ -1431,7 +1431,7 @@
                        if (filter(item)) count++;
                      return count;
                  }
-            
+
                  public static void CountBySubString(List<string> items, string subStr) => CountByFilter(items, new ContainsStringPredicate { SubString = subStr } );
              }
              ]]></example>
@@ -1446,7 +1446,7 @@
             <summary>Converts to <see cref="T:System.Predicate`1"/> delegate.</summary>
         </member>
         <member name="T:Eco.Shared.Utils.LimitMapper.Config">
-            <summary>Functions for 'soft capping' values. That is, making them approach a 'soft cap' linearly as an input changes, then approach a 'hard cap' as a limit, 
+            <summary>Functions for 'soft capping' values. That is, making them approach a 'soft cap' linearly as an input changes, then approach a 'hard cap' as a limit,
             never actually reaching it.  This is used in various places in order to allow for unlimited improvement as a value goes up, but at diminishing returns.</summary>
         </member>
         <member name="M:Eco.Shared.Utils.LimitMapper.Config.Describe(Eco.Shared.Localization.LocString,Eco.Shared.Localization.LocString)">
@@ -1511,7 +1511,7 @@
             <summary> Parses and evaluates math expressions. </summary>
         </member>
         <member name="M:Eco.Shared.Utils.MathParser.MathParser.ReplaceVariable(System.String,System.String,System.Single)">
-            <summary> Replaces text representations of the variable with the provided value. 
+            <summary> Replaces text representations of the variable with the provided value.
             Note that it looks for exact matches and if 'Example' is passed, it won't touch 'Also Example', though the second one contains provided representation. </summary>
             <param name="expression"> A string that contains text representations of the variable. </param>
             <param name="variableName"> Text representation that will be replaced. </param>
@@ -1593,8 +1593,8 @@
         </member>
         <member name="T:Eco.Shared.Utils.MemberwiseEqualityObject">
             <summary>
-            Base class that provides a dynamic, memberwise Equals/GetHashCode 
-            implementation. Rather than using reflection, methods are created 
+            Base class that provides a dynamic, memberwise Equals/GetHashCode
+            implementation. Rather than using reflection, methods are created
             using compiled expression trees.
             </summary>
         </member>
@@ -1634,7 +1634,7 @@
         </member>
         <member name="M:Eco.Shared.Utils.MemberwiseEqualityObject.#ctor">
             <summary>
-            Dynamically compiles the Equals/GetHashCode functions on the 
+            Dynamically compiles the Equals/GetHashCode functions on the
             first call to a subclass constructor.
             </summary>
         </member>
@@ -2032,7 +2032,7 @@
              As soon as first candidate tested it will be auto-winner, but also it will randomly select next winner index and reset candidate counter.
              As soon as we have candidate with selected winner index it will replace previous winner and we select next winner index.
              It uses some adjustments to make replacement more often for low number of elements and less often as number of elements growth.
-            
+
              This algorithm is adaptation of https://en.wikipedia.org/wiki/Reservoir_sampling for k = 1.
              </summary>
         </member>
@@ -3207,9 +3207,9 @@
                  [AutoContextComment("Player Configuration")]
                  public Setting  Config { get; set; }
              }
-            
+
              will extract "Config" loc string with context 'Player Configuration'
-            
+
              </summary>
         </member>
         <member name="T:Eco.Shared.Localization.ContextCommentAttribute">
@@ -3222,9 +3222,9 @@
                  [AutoContextComment("Player Configuration")]
                  public Setting  Config { get; set; }
              }
-            
+
              will extract "Some description" loc string with context 'Some description context'
-            
+
              </summary>
         </member>
         <member name="M:Eco.Shared.Localization.LocExtensions.GetLocDisplayName(System.Enum,System.Boolean,System.Boolean)">
@@ -3297,7 +3297,7 @@
         <member name="F:Eco.Shared.Localization.SupportedLanguageUtils.DictToCultureLangCode">
             <summary>
             Table for converting eco lang to .NET culture codes for use with external ASP.NET restful services.
-            A complete list of supported CultureInfo codes can be found here: 
+            A complete list of supported CultureInfo codes can be found here:
             https://docs.microsoft.com/en-us/bingmaps/rest-services/common-parameters-and-types/supported-culture-codes
             </summary>
         </member>
@@ -3346,7 +3346,7 @@
              If compressed data never overlap next uncompressed data it won't imply any extra copy operation.
              If <paramref name="force"/> is <c>false</c> then it will decide if it is better to keep uncompressed (if input length is 0 or if first block is greater in compressed size than uncompressed.
              </summary>
-            
+
         </member>
         <member name="M:Eco.Shared.LZ4.LZ4Utils.CopyInput(System.Buffers.ArrayPool{System.Byte},System.Span{System.Byte}@,System.Int32@)">
             <summary>Copies input buffer and returns a copy byte array, resets producedBytes to MinValue so it never exceed consumedBytes again.</summary>
@@ -3481,7 +3481,7 @@
              <summary>
              Wraps value to a range starting with 0 and ending with wrapTo.
              It ensures value in this range and if value is negative it will start from end of range.
-            
+
              For wrapped range we means a some range starting with 0 and ended with concrete end value. I.e. [0, 100)
              When value wrapped it should be enclosed in this range:
               - reduce it to length of this range with "modulo" operation.
@@ -3532,7 +3532,7 @@
              <summary>
              Wraps value to a range starting with 0 and ending with wrapTo.
              It ensures value in this range and if value is negative it will start from end of range.
-            
+
              For wrapped range we means a some range starting with 0 and ended with concrete end value. I.e. [0, 100)
              When value wrapped it should be enclosed in this range:
               - reduce it to length of this range with "modulo" operation.
@@ -3558,22 +3558,22 @@
         <member name="M:Eco.Shared.Math.IntExtensions.InWrappedRange(System.Int32,System.Int32,System.Int32,System.Int32)">
              <summary>
              Checks if value is in a range which enclosed in wrapped range. <see cref="M:Eco.Shared.Math.IntExtensions.Wrap(System.Int32,System.Int32)"/>
-            
+
              It means that "wrappedStart" and "wrappedEnd" values defines a range [wrappedStart, wrappedEnd),
              but this range itself is wrapped to [0, wrappedTo).
-            
+
              So it may create situation when we have initial values: "start" = 80, "end" = 150,
              but after wrapping to [0, 100) they become: "wrappedStart" = 80 and "wrappedEnd" = 50.
-            
+
              And in this case we have "wrappedStart" > "wrappedEnd", because of wrapping. It may be represented as:
              <para>
              xxxxxxx*********************xxxxxxx.
              </para>
              where "x" belongs to wrappedStart to wrappedEnd range.
-            
+
              And for this kind of range we have to make special check where "value" contained in [min, max) range when
              it either contained in [wrappedStart, wrappedTo) or [0, wrappedEnd).
-            
+
              If min &lt;= max, then standard check will be used.
              </summary>
              <param name="value">value to check if it contains in range.</param>
@@ -3588,9 +3588,9 @@
              Creates enumerator which enumerates all values contained in range defined by "wrappedStart" and "wrappedEnd". <see cref="M:Eco.Shared.Math.IntExtensions.Wrap(System.Int32,System.Int32)"/>
              These values enclosed in wrapping range [0, wrappedTo), so it may create situation where "wrappedStart"
              greater than "wrappedEnd" because of overlapping start or end bound.
-            
+
              I.e. for wrapping range [0, 100): [-50, 10) => [50, 10), [50, 120) => [50, 20)
-            
+
              In this case we have to iterate over two ranges: [wrappedStart, wrappedTo) and [0, wrappedEnd).
              If wrappedStart less or equal to wrappedEnd then we go to standard iteration over [wrappedStart, wrappedEnd).
              </summary>
@@ -3628,7 +3628,7 @@
             <summary>Packed chunk position. Useful when you need to use chunk position as lookup key (i.e. in Dictionary) for faster checks and compact storage.</summary>
         </member>
         <member name="M:Eco.Shared.Math.Range.InRangeNormalDist(System.Single)">
-            Return whether a value is in the range, based on a normal random distribution 
+            Return whether a value is in the range, based on a normal random distribution
         </member>
         <member name="M:Eco.Shared.Math.Range.Clamp0">
             <summary> Make sure the range is >= 0 </summary>
@@ -3685,7 +3685,7 @@
             <summary> Emits all integer two-component vectors from min (inclusive) to max (exclusive). </summary>
         </member>
         <member name="M:Eco.Shared.Math.Vector2i.XYIterInclusive(System.Int32,System.Int32)">
-            Iterate over a range (inclusive) 
+            Iterate over a range (inclusive)
         </member>
         <member name="M:Eco.Shared.Math.SVector3.NormalizeSafe(Eco.Shared.Math.SVector3)">
             <summary> Returns normalized version of vector (by dividing each component on vector length), but returns <paramref name="defaultValue"/> in case if length is zero to avoid producing NaN vector. </summary>
@@ -3886,7 +3886,7 @@
             <summary>
             Inverts the range inside world to make a direction in a proper way
             E.g. start as 955 with end as 1 and worldSize 1000 will give a reversed direction from 955 to 1
-            It'll return minValue as -45 and maxValue as 1 (-45:1 range) 
+            It'll return minValue as -45 and maxValue as 1 (-45:1 range)
             </summary>
         </member>
         <member name="M:Eco.Shared.Math.WorldRange.Fix(Eco.Shared.Math.Vector3i)">
@@ -3926,7 +3926,7 @@
         </member>
         <member name="M:Eco.Shared.Math.WorldRange.IntersectsWrapped(Eco.Shared.Math.WorldRange,Eco.Shared.Math.Vector3i)">
             <summary>
-            Checks if current current range intersects with another range in a wrapped space. Based loosely on the implementation of <see cref="M:Eco.Shared.Math.WorldRange.Intersects(Eco.Shared.Math.WorldRange)"/> 
+            Checks if current current range intersects with another range in a wrapped space. Based loosely on the implementation of <see cref="M:Eco.Shared.Math.WorldRange.Intersects(Eco.Shared.Math.WorldRange)"/>
             It makes sure to convert the ranges to a wrapped world space.
             </summary>
         </member>
@@ -4197,20 +4197,20 @@
              Sends unconnected message to recipient with fragmentation support.
              Fragmented messages conforms to following protocol:
                  [NetMessage.FragmentedMessage][fragmentation info byte][fragmented message guid][message body fragment]
-            
+
              [fragmentation info byte] - contains pair partIndex/numOfParts (4 bits each), lower 4 bits is a part index and upper 4 bits is a number of parts. If 0 then message is not fragmented
              [fragmented message guid] - Used as fragmented message identifier to assembly message from parts at destination. 16 bytes.
              [message body fragment] - actual message body. Each fragment will contain part of message body.
-            
+
              Samples:
              0Hello World
-            
+
              One fragment:
                  [\0][H][e][l][l][o][ ][W][o][r][l][d]
              Two fragments:
                  [\10][\32][Guid:16 bytes][\0][H][e][l][l][o]
                  [\10][\33][Guid:16 bytes][ ][W][o][r][l][d]
-            
+
              Following this protocol maximum useful allowed message length is: (MTU - 18) * 15.
              </summary>
              <param name="peer">peer.</param>
@@ -4253,7 +4253,7 @@
             <summary>
             <para>Allows an object to intercept <seealso cref="T:Eco.Shared.Serialization.BSONObject"/>s being sent.</para>
             <para>
-            See <seealso cref="M:Eco.Shared.Networking.NetObject.AddNetworkInteceptor(Eco.Shared.Networking.INetworkInterceptor)"/> and <seealso cref="M:Eco.Shared.Networking.NetObject.RemoveNetworkInterceptor(Eco.Shared.Networking.INetworkInterceptor)"/> 
+            See <seealso cref="M:Eco.Shared.Networking.NetObject.AddNetworkInteceptor(Eco.Shared.Networking.INetworkInterceptor)"/> and <seealso cref="M:Eco.Shared.Networking.NetObject.RemoveNetworkInterceptor(Eco.Shared.Networking.INetworkInterceptor)"/>
             for adding/removing <seealso cref="T:Eco.Shared.Networking.INetworkInterceptor"/> instances.
             </para>
             </summary>
@@ -4936,7 +4936,7 @@
              when `head` == `tail` then buffer is empty
              when `head` == `tail - 1` then buffer is full
              we're using `poolSize + 1` for capacity to maintain full buffer scenario, because otherwise we can have two situations when write position == read position (empty and full).
-            
+
              Performance:
              ~2x faster in concurrent environment than basic Stack based pool implementation with lock
              ~10% faster in single-thread environment than basic Stack based pool implementation with lock.
@@ -5899,7 +5899,7 @@
             <summary>Returns count of property subscriptions. Mostly for debugging purposes.</summary>
         </member>
         <member name="M:Eco.Shared.View.View.TryGetValue``1(System.String,``0@,System.Int32)">
-            <summary>Get a dynamic value by property name, querying both reflection and the list of dynamic properties sent by the server.  Returns 
+            <summary>Get a dynamic value by property name, querying both reflection and the list of dynamic properties sent by the server.  Returns
             false if the property doesnt exist in either, or if referencing a list, the list index doesn't exist.</summary>
         </member>
         <member name="M:Eco.Shared.View.View.RPC(System.String,System.Object[])">
@@ -5909,7 +5909,7 @@
             <summary>Makes RPC call on the View with callback with no return value. <paramref name="response"/> callback doesn't wait while views changed with RPC synced back to the client, so you may have old View values when callback invoke. If you need to have synced values then use <see cref="M:Eco.Shared.View.View.SyncedRPC(System.String,System.Action,System.Object[])"/> instead.</summary>
         </member>
         <member name="M:Eco.Shared.View.View.ThrottledRPC(System.String,System.Object[])">
-            <summary>Makes RPC call on the View with ensurence that it won't be sent again if server still didn't confirmed previous request. </summary> 
+            <summary>Makes RPC call on the View with ensurence that it won't be sent again if server still didn't confirmed previous request. </summary>
         </member>
         <member name="M:Eco.Shared.View.View.SyncedRPC(System.String,System.Action,System.Object[])">
             <summary>
@@ -6094,9 +6094,9 @@
         </member>
         <member name="T:Eco.Shared.Voxel.HashChunkContainer`1">
              <summary>
-             This is an alternative class to the OctreeChunkContainer, rather than storing chunks in a tree we store them in a hash table. 
+             This is an alternative class to the OctreeChunkContainer, rather than storing chunks in a tree we store them in a hash table.
              This will use slightly more memory, but gives a faster speed lookup for single chunks, and similar speed for ranges.
-            
+
              Note: In order to get chunk level locking, rather than lock the whole container during each update, the Count may not always be correct and should only be treaded as a guide.
              e.g. Don't use Count to create a new array, create a List instead, that way if count is wrong it wont matter as the list will auto expand itself.
              </summary>
@@ -6197,10 +6197,10 @@
             <summary>Converts world space position to chunk space. Unlike <see cref="M:Eco.Shared.Voxel.World.ToChunkPosition(Eco.Shared.Math.WrappedPosition3i)"/> works with unwrapped positions and returns unwrapped chunk position.</summary>
         </member>
         <member name="M:Eco.Shared.Voxel.World.ToLocalPosition(Eco.Shared.Math.Vector3i)">
-            Warning: The coordinates are modulus/wrapping based on the chunk size, not relative to the chunk origin 
+            Warning: The coordinates are modulus/wrapping based on the chunk size, not relative to the chunk origin
         </member>
         <member name="M:Eco.Shared.Voxel.World.ToLocalPosition(System.Int32,System.Int32,System.Int32)">
-            Warning: The coordinates are modulus/wrapping based on the chunk size, not relative to the chunk origin 
+            Warning: The coordinates are modulus/wrapping based on the chunk size, not relative to the chunk origin
         </member>
         <member name="M:Eco.Shared.Voxel.World.ToLocalPosition(Eco.Shared.Math.WrappedWorldPosition3i)">
             <summary> Returns local block position within chunk space. All chunks should be aligned to <see cref="F:Eco.Shared.Voxel.Chunk.Size"/>. Using <see cref="T:Eco.Shared.Math.WrappedWorldPosition3i"/> let us skip some check and use most optimized algorithm. </summary>
@@ -6220,20 +6220,20 @@
              This implementation only copies the bytes when GetBuffer is called.
              4. Memory fragmentation - By using homogeneous buffer sizes, it ensures that blocks of memory
              can be easily reused.
-            
+
              The stream is implemented on top of a series of uniformly-sized blocks. As the stream's length grows,
              additional blocks are retrieved from the memory manager. It is these blocks that are pooled, not the stream
              object itself.
-            
+
              The biggest wrinkle in this implementation is when GetBuffer() is called. This requires a single
              contiguous buffer. If only a single block is in use, then that block is returned. If multiple blocks
              are in use, we retrieve a larger buffer from the memory manager. These large buffers are also pooled,
              split by size--they are multiples of a chunk size (1 MB by default).
-            
+
              Once a large buffer is assigned to the stream the blocks are NEVER again used for this stream. All operations take place on the
              large buffer. The large buffer can be replaced by a larger buffer from the pool as needed. All blocks and large buffers
              are maintained in the stream until the stream is disposed (unless AggressiveBufferReturn is enabled in the stream manager).
-            
+
              </remarks>
         </member>
         <member name="F:Microsoft.IO.RecyclableMemoryStream.blocks">
@@ -6500,7 +6500,7 @@
              <remarks>
              There are two pools managed in here. The small pool contains same-sized buffers that are handed to streams
              as they write more data.
-            
+
              For scenarios that need to call GetBuffer(), the large pool contains buffers of various sizes, all
              multiples of LargeBufferMultiple (1 MB by default). They are split by size to avoid overly-wasteful buffer
              usage. There should be far fewer 8 MB buffers than 1 MB buffers, for example.

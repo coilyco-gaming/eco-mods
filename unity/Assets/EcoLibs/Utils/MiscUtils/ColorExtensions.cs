@@ -10,7 +10,7 @@ public static class ColorExtensions
         // it is absolutely bizarre that unity doesn't have a way to get the integer color, and uint.tostring("X") doesn't work either
         return ((int)(c.r * 255)).ToString("X2") + ((int)(c.g * 255)).ToString("X2") + ((int)(c.b * 255)).ToString("X2");
     }
-    
+
     public static Color FromUInt(uint color)
     {
         float r = ((color & 0xff000000) >> 24) / 255.0f;
@@ -23,14 +23,14 @@ public static class ColorExtensions
 
     public static uint ToUInt(this Color c)
     {
-        return 
+        return
             ((uint)Mathf.Clamp(c.r * 255, 0, 255) << 24) |
             ((uint)Mathf.Clamp(c.g * 255, 0, 255) << 16) |
             ((uint)Mathf.Clamp(c.b * 255, 0, 255) << 8) |
             ((uint)Mathf.Clamp(c.a * 255, 0, 255));
     }
 
-    // order is AARRGGBB to match System.Drawing.Color 
+    // order is AARRGGBB to match System.Drawing.Color
     public static int ToInt(this Color c)
     {
         return unchecked ((int) (

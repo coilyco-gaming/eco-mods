@@ -31,10 +31,10 @@ public class CustomAnimsetOverrideEditor : Editor
                                 "(Clip) on the right is target animation that will be used for that state\n" +
                                 "Preset button below can be used to predefine data.\n" +
                                 "New states can be easily added on top/from scratch if needed\n", MessageType.Info);
-        
+
         serializedObject.Update();
         list.DoLayoutList();
-        
+
         // Clears all overrides
         this.DrawResetButton();
 
@@ -43,7 +43,7 @@ public class CustomAnimsetOverrideEditor : Editor
         this.DrawStatesFoodButton("FPV");
         this.DrawStatesFoodButton("TPV");
         EditorGUILayout.EndHorizontal();
-        
+
         this.DrawStatesFPVBasicButton();
 
         // Draw special field to get states from target animator. Just for
@@ -116,12 +116,12 @@ public class CustomAnimsetOverrideEditor : Editor
     {
         if (GUILayout.Button("Reset states")) this.data.OverrideStates.Clear();
     }
-    
+
     // Drawer for OverrideStates in CustomAnimset, allows to make it the same as AnimatorOverrideController built-in unity
     void SetupOverrideStatesProperty()
     {
         this.OverrideStates = serializedObject.FindProperty("OverrideStates");
-        
+
         list = new ReorderableList(serializedObject, OverrideStates)
         {
             displayAdd = true,

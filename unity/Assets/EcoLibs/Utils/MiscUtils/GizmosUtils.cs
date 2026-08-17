@@ -31,7 +31,7 @@ public static class GizmosUtils
         Gizmos.matrix = Matrix4x4.identity;
     }
 
-    /// <summary> Does a <see cref="Physics.CheckBox"/> to check for any collisions, and sets it's correspondant <see cref="Gizmos.color"/> 
+    /// <summary> Does a <see cref="Physics.CheckBox"/> to check for any collisions, and sets it's correspondant <see cref="Gizmos.color"/>
     /// then it calls a give drawFunction. For example <see cref="DrawCubeWithMatrix"/> or <see cref="DrawWireCubeWithMatrix"/>.
     /// </summary>
     public static void CheckCubeCollisionAndDraw(Vector3 position, Quaternion rotation, Vector3 size, Color noCollision, Color collisionColor, int layerMask, System.Action<Vector3, Quaternion, Vector3, Vector3?> drawFunc)
@@ -71,7 +71,7 @@ public static class GizmosUtils
         var cubeVextexes = GetCubeVertexes(origin, size, orientation);
         //draws rays for each vertex of the initial cube
         for (int i = 0; i < cubeVextexes.Length; i++) Gizmos.DrawRay(cubeVextexes[i], dir);
-       
+
         //draws starter cube
         Gizmos.matrix = Matrix4x4.TRS(origin, orientation, Vector3.one);
         Gizmos.DrawWireCube(Vector3.zero, size * 2f);
@@ -109,9 +109,9 @@ public static class GizmosUtils
 
         Gizmos.matrix = Matrix4x4.TRS(ray.origin + ray.direction * distance, lookRotation, Vector3.one);
         Gizmos.DrawWireSphere(Vector3.zero, radius);
-        
+
         Gizmos.matrix = Matrix4x4.identity;
-        
+
         // Draws 9 rays around the sphereCast UP and RIGHT vectors, making it "cilinder"
         for (int i = -1; i <= 1; i++)    // -1, 0 , 1
         for (int u = -1; u <= 1; u++)    // -1, 0 , 1

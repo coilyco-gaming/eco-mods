@@ -56,7 +56,7 @@ namespace Eco.Animation
             public bool NeedQuickBlend { get; } //Is the animation need a quick blend, for smoother transitions?
             public bool UsedOnLadder   { get; } //Is this one will be used on ladder?
             public bool HideTool       { get; } //Should this state set tool layer weight for blending to 0 (hide anims) atm used for TPV only
-            
+
             public AvatarAnimationState(AvatarState avatarState, bool allowRotation, bool useInAir, bool isSpecialState, bool usedOnLadder, bool hideTool)
             {
                 this.AnimationStateName = avatarState.ToString();

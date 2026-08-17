@@ -19,7 +19,7 @@ public class TransformSync : TrackableBehavior
             if (this.syncRotation) this.transform.localRotation = this.target.localRotation;
             if (this.syncPosition)
                 this.transform.localPosition = this.GetAxisPosition(this.transform.localPosition, this.target.localPosition, this.PosSyncAxis);
-            
+
         }
         else
         {

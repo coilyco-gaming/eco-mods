@@ -31,7 +31,7 @@ namespace Eco.Client.Pooling
 #endif
         public PooledObject gameObjectPrefab;
         [Tooltip("Keeping too much pooled objects will affect performance as well. For example, when closing window it is faster to destroy objects than re-parent them to pool. Also sometimes big pool is not needed but uses memory.")]
-        public int maxPooledCount = -1; 
+        public int maxPooledCount = -1;
 
         [NonSerialized] public IPooledObjectOwner owner;
 
