@@ -20,4 +20,3 @@ public class ChatEmote
     /// <summary>Name used to display this chat emote in chat.</summary>
     public string KeywordName => $":{Name}:";
 }
-

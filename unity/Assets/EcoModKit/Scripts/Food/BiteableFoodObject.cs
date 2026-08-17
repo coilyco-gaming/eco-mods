@@ -13,7 +13,7 @@ public class BiteableFoodObject : TrackableBehavior
     [Header("Core config")]
     [Tooltip("Collection of food parts. All the bites by size descending")]
     public GameObject[] FoodParts;
-    
+
     [Tooltip("Animation sequence for food sequence during eating. Can be created from asset creation menu")]
     public FoodBiteSequence BiteSequence;
 
@@ -28,17 +28,17 @@ public class BiteableFoodObject : TrackableBehavior
     public GameObject UtensilTemplate;
 
     [Tooltip("If true food parts will be placed inside utensil object automatically, using current bite piece in sequence")]
-    public bool UseAutoUtensilPartPlacement = true; 
+    public bool UseAutoUtensilPartPlacement = true;
 
     [Tooltip("Custom food chunk to use on every bite for utensils")]
-    public GameObject CustomFoodChunkForUtensils; 
-    
+    public GameObject CustomFoodChunkForUtensils;
+
     [Tooltip("Position offset for parts to use with Utensils (when part will be spawned on utensil)")]
     public Vector3 UtensilPartPositionOffset;
-    
+
     [Tooltip("Rotation offset for parts to use with Utensils (when part will be spawned on utensil)")]
     public Vector3 UtensilPartRotationOffset;
-    
+
     [Tooltip("Scale multiplier on each side for parts to use with Utensils (when part will be spawned on utensil)")]
     public Vector3 UtensilScaleMultForBitePiece = new Vector3(1f, 1f, 1f);
 

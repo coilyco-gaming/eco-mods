@@ -17,7 +17,7 @@ public class TrackableBehavior : MonoBehaviour
         if (QualityAssurance.Enabled) //Disabled for production so it wont affect performance
             References.Add(new WeakReference<TrackableBehavior>(this));
     }
-    
+
     static string report = null;
     static float lastTimeReportGenerated = 0f;
     const float secondsToConsiderReportOutdated = 20;

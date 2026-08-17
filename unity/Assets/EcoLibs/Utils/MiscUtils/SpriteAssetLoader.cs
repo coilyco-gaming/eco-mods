@@ -39,7 +39,7 @@ public static class SpriteAssetLoader
 
         int indexOfSprite = asset.GetSpriteIndexFromName(sprite.name);
         if (indexOfSprite == -1) return AddSpriteToSpriteAsset(asset, sprite); //Add sprite to TMP_SpriteAsset if it doesnt exist
-        else if (indexOfSprite < asset.spriteInfoList.Count) return UpdateSpriteAsset(asset.spriteInfoList[indexOfSprite], sprite); //or update sprite data from spriteinfolist    
+        else if (indexOfSprite < asset.spriteInfoList.Count) return UpdateSpriteAsset(asset.spriteInfoList[indexOfSprite], sprite); //or update sprite data from spriteinfolist
         return null;
     }
 
@@ -85,7 +85,7 @@ public static class SpriteAssetLoader
         //TMP_SpriteAsset.UpgradeSpriteAsset is called when material is not empty and version is set
         //so for performance reasons material is set after all sprites initialized
         UnityEngine.Object.Destroy(asset.material);
-        //The reflection is the only way to reset version value  
+        //The reflection is the only way to reset version value
         var m_Version = typeof(TMP_SpriteAsset).GetField("m_Version", BindingFlags.NonPublic | BindingFlags.Instance);
         m_Version.SetValue(asset, null);
         BuildSprite(asset);

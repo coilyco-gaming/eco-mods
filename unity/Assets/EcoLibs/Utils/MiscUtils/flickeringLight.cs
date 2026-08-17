@@ -1,14 +1,14 @@
 /* ----------------------------------------------
- * 
+ *
  * Flickering Lights * (C)2010 Rouhee - Games
- * 
+ *
  * timo.anttila@rouheegames.com
- * 
+ *
  * http://www.rouheegames.com
- * 
+ *
  * - Provided as is.
  * - You can change and distribute as you like.
- * 
+ *
  * ------------------------------------------ */
 
 using UnityEngine;
@@ -42,7 +42,7 @@ public class flickeringLight : TrackableBehavior
     public float CampfireRangeBaseValue = 10.0f;
     // Range Flickering Power
     public float CampfireRangeFlickerValue = 2.0f;
-    
+
     // If Style is Sine
     private float CampfireSineCycleIntensity = 0.0f;
     private float CampfireSineCycleRange = 0.0f;
@@ -63,9 +63,9 @@ public class flickeringLight : TrackableBehavior
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -126,6 +126,6 @@ public class flickeringLight : TrackableBehavior
                 // You should not be here.
                 break;
         }
-	
+
 	}
 }

@@ -38,7 +38,7 @@ public static class RectExtensions
         float y = p.y < rect.yMin ? p.y - rect.yMin : (p.y > rect.yMax ? p.y - rect.yMax : 0f);
         return new Vector2(x, y);
     }
-    
+
     public static Vector2 Clamp(this Rect rect, Vector2 p)
     {
         p.x = Mathf.Clamp(p.x, rect.xMin, rect.xMax);
@@ -80,7 +80,7 @@ public static class RectExtensions
     }
 
     /// <summary>
-    /// When Pivot of RectTransform is changed, the position is changed too (even if visible place of rect is the same). 
+    /// When Pivot of RectTransform is changed, the position is changed too (even if visible place of rect is the same).
     /// This function will return values like they would be with (0;0) pivot, so for same visible place it will be the same.
     /// </summary>
     /// <param name="rectTransform"></param>
@@ -99,7 +99,7 @@ public static class RectExtensions
          rect.y -= (transform.pivot.y * size.y);
          return rect;
     }
-    
+
     public static Rect Side(this Rect rect, Vector2i dir)
     {
         var topOrLeft   = dir == Vector2i.Left || dir == Vector2i.Up;
@@ -130,18 +130,18 @@ public static class RectExtensions
         return Vector2.zero;
     }
 
-    public static Vector2 EdgeMidpoint(this Rect rect, Direction2D dir)     
+    public static Vector2 EdgeMidpoint(this Rect rect, Direction2D dir)
     {
         switch (dir)
-        { 
-            case Direction2D.Left:    return LeftMiddle(rect); 
-            case Direction2D.Right:   return RightMiddle(rect); 
-            case Direction2D.Up:      return TopMiddle(rect); 
-            case Direction2D.Down:    return BottomMiddle(rect); 
+        {
+            case Direction2D.Left:    return LeftMiddle(rect);
+            case Direction2D.Right:   return RightMiddle(rect);
+            case Direction2D.Up:      return TopMiddle(rect);
+            case Direction2D.Down:    return BottomMiddle(rect);
         }
         return Vector2.zero;
     }
-    
+
     public static Vector2 TopMiddle(this Rect rect)     { return new Vector2((rect.xMin + rect.xMax) / 2, rect.yMax); }
     public static Vector2 BottomMiddle(this Rect rect)  { return new Vector2((rect.xMin + rect.xMax) / 2, rect.yMin); }
     public static Vector2 LeftMiddle(this Rect rect)    { return new Vector2(rect.xMin, (rect.yMin + rect.yMax) / 2); }
@@ -155,7 +155,7 @@ public static class RectExtensions
 
     public static Vector2 GetPositionInRect(this Rect rect, Vector2 percent)
     {
-        return new Vector2( Mathf.Lerp(rect.position.x, rect.position.x + rect.size.x, percent.x), 
+        return new Vector2( Mathf.Lerp(rect.position.x, rect.position.x + rect.size.x, percent.x),
                             Mathf.Lerp(rect.position.y, rect.position.y + rect.size.y, percent.y));
     }
 

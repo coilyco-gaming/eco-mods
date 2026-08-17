@@ -8,4 +8,3 @@ will be chosen from using noise based on the world position.LOD1 and LOD2 meshes
 detail chunks.
 
 LOD0 meshes use the materials set in the block, however LOD1 and LOD2 meshes use a single material with different textures.
-

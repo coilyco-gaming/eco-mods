@@ -4,8 +4,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>This class is used to implement a custom LocalPool, if we don't want the own object to deal with its own pool stack, we just call this, this recieves a pool as a parameter, so you can handle all the pools 
-/// in one script, making it easy to reference the list, the prefab and the container we mean. 
+/// <summary>This class is used to implement a custom LocalPool, if we don't want the own object to deal with its own pool stack, we just call this, this recieves a pool as a parameter, so you can handle all the pools
+/// in one script, making it easy to reference the list, the prefab and the container we mean.
 /// note: needs MonoBehaviour to be able to Instanciate </summary>
 public class LocalPoolExtention : LocalPool
 {

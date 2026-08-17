@@ -8,7 +8,7 @@ using UnityEngine;
 public class ItemAnimationData : TrackableBehavior
 {
     public ItemAnimationCategory AnimationCategory = ItemAnimationCategory.WorkingSingle;
-    
+
     [Tooltip("Custom animation set for animation states. Override this to get custom animation and behaviours with this item." +
              " If this is used on tpv tool - avatar animator will be used, and hands animator for fpv tool prefab")]
     public CustomAnimsetOverride CustomAnimset; // Set of overriden animation for general actions. Allows to reuse 1 animator for all tools/items

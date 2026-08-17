@@ -19,11 +19,11 @@ public static class TempLists
     /// <summary>Rents temp list of type <see typeref="List{T}"/>.</summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static List<T> Rent<T>() => PoolHolder<T>.Pool.Rent();
-    
+
     /// <summary>Returns to pool temp list of type <see typeref="List{T}"/> previously rented with <see cref="Rent{T}"/>.</summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void Return<T>(List<T> list) => PoolHolder<T>.Pool.Return(list);
-    
+
     /// <summary>Holder for lists <see cref="Pool"/> of type <typeparamref name="T"/>. It uses thread-unsafe fixed size pool for max performance.</summary>
     static class PoolHolder<T>
     {

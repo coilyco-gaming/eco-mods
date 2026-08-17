@@ -43,7 +43,7 @@ public static class UnityObjectExtensions
     ///so this is mean to be used on the OnValidate method to reduce the missing references errors on the prefabs</summary>
     public static void GetAndVerifyExistsComponent<T>(this GameObject gameObject, ref T component) where T : Component
     {
-        if (component == null) 
+        if (component == null)
         {
             component = gameObject.GetComponentInChildren<T>(true);
             if (component == null) Debug.LogError($"Could not find component of type {typeof(T)} among the children of {gameObject.name}");
@@ -52,9 +52,9 @@ public static class UnityObjectExtensions
 
     ///<summary>Gets a component of type T from the children of the game object when the component is null (search based on name). GetComponentInChildren may be an expensive operation
     ///so this is mean to be used on the OnValidate method to reduce the missing references errors on the prefabs</summary>
-    public static void GetAndVerifyExistsComponent<T>(this GameObject gameObject, ref T component, string name) where T : Component 
+    public static void GetAndVerifyExistsComponent<T>(this GameObject gameObject, ref T component, string name) where T : Component
     {
-        if (component == null) 
+        if (component == null)
         {
             component = gameObject.GetComponentsInChildren<T>(true).Where(x => x.name.Equals(name)).FirstOrDefault();
             if (component == null) Debug.LogError($"Could not find an object called {name} that contains the component of type {typeof(T)} among the children of {gameObject.name}");

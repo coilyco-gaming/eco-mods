@@ -15,7 +15,7 @@ namespace Eco.Client.UI
     /// <example> Parameters: customText = "Unlimited"; threshold = 10; comparisonType = ComparisonType.GreaterThan; format = "{0:0.0}";
     /// - The method UpdateFromFloatCustomText(5f) is called the text will display 5.0
     /// - The method UpdateFromFloatCustomText(15f) is called the text will display "Unlimited"
-    /// </example> 
+    /// </example>
     public class UpdateCustomText : UpdateText
     {
         [SerializeField] string customText = "";
@@ -58,13 +58,13 @@ namespace Eco.Client.UI
             this.UpdateTextFromValue(value);
         }
 
-        void UpdateTextFromValue(float value) 
+        void UpdateTextFromValue(float value)
         {
             if (this.UseCustomText(value)) this.text.text = this.customText;
             else this.text.text = string.Format(this.format, value);
         }
 
-        bool UseCustomText(float value) 
+        bool UseCustomText(float value)
         {
             bool useCustomText = false;
             switch (this.comparisonType)

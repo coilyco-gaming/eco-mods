@@ -54,7 +54,7 @@ namespace Eco.Client.Pooling
                 typeof(CanvasGroup),
                 typeof(GridLayoutGroup),
                 typeof(Tree),
-                
+
                 // TMPro
                 typeof(TextMeshProUGUI),
                 typeof(TMP_InputField),

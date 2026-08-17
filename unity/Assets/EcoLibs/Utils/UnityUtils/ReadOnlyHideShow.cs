@@ -17,8 +17,8 @@ public enum ReadOnlyType { Hide, Disable }
 public class ReadOnlyHideShow : TrackableBehavior, IReadOnly
 {
     public ReadOnlyType ReadOnlyType = ReadOnlyType.Hide;
-    public void SetReadOnly(bool readOnly) 
-    { 
+    public void SetReadOnly(bool readOnly)
+    {
         if (this.ReadOnlyType == ReadOnlyType.Hide)         this.gameObject.SetActive(!readOnly);
         else if (this.ReadOnlyType == ReadOnlyType.Disable) this.gameObject.GetComponent<Selectable>().interactable = !readOnly;
     }

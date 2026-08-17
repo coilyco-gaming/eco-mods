@@ -27,7 +27,7 @@ public struct AnimsetOverrideItem
         this.State = state;
         this.Clip = null;
     }
-    
+
     public AnimsetOverrideItem(string state, AnimationClip clip)
     {
         this.State = state;

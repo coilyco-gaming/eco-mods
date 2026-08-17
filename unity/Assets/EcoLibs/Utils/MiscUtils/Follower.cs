@@ -3,7 +3,7 @@
 
 using UnityEngine;
 
-public class Follower : TrackableBehavior 
+public class Follower : TrackableBehavior
 {
     public string targetTag;
 

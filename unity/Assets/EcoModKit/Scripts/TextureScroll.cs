@@ -25,7 +25,7 @@ public class TextureScroll : TrackableBehavior
     {
         if (_material == null)
             Init();
-        
+
         StopScrolling();
 
         currentOffset = _material.GetTextureOffset("_MainTex");

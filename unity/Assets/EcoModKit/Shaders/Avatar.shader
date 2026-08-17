@@ -1,4 +1,4 @@
-﻿Shader "Curved/Avatar" 
+﻿Shader "Curved/Avatar"
 {
     Properties
     {
@@ -13,7 +13,7 @@
         _Cutoff ("Alpha Cutoff", Range(0, 1)) = 0.5
         _YAxisClip ("Y axis clip", Range(0, 1)) = 0.0
     }
-        
+
     SubShader
     {
         Tags { "RenderType" = "Opaque" }
@@ -25,7 +25,7 @@
         #pragma surface surf Standard vertex:vert  alphatest:_Cutoff
 
         #pragma multi_compile ___ NO_CURVE // using multicompile here so we get both curve/nocurve in build, also want default no curve
-        
+
         #pragma multi_compile ___ THIRDPERSON_ON //Used for applying mask to the material based on player's view (first or third)
 
         #pragma shader_feature _METALLICGLOSSMAP
@@ -106,15 +106,15 @@
 
         //Render avatar shadows in seperate pass
         Pass
-		{		
-			Tags{ "LightMode" = "ShadowCaster" }		
+		{
+			Tags{ "LightMode" = "ShadowCaster" }
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
 			#pragma target 3.0
             #pragma multi_compile ___ NO_CURVE // using multicompile here so we get both curve/nocurve in build, also want default no curve
             #include "../../EcoModKit/Shaders/CurvedHelper.cginc"
-					
+
 			float4 vert (float4 vertex:POSITION) : SV_POSITION
 			{
 				return UnityObjectToClipPos(curveVertex(vertex, unity_ObjectToWorld, unity_WorldToObject));//curve vertex positions for shadows

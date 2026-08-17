@@ -19,7 +19,7 @@ namespace Eco.Client.Utils
         {
             // Joint ref
             readonly HingeJoint Joint;
-            
+
             // Cached data to restore when needed
             readonly Rigidbody ConnectedBodyCache;
             readonly bool UseSpringCache;
@@ -32,7 +32,7 @@ namespace Eco.Client.Utils
                 this.JointLimitsCache = limits;
                 this.Joint = joint;
             }
-        
+
             public void Reset()
             {
                 if (this.Joint.connectedBody != null) this.Joint.connectedBody.Sleep();
@@ -53,7 +53,7 @@ namespace Eco.Client.Utils
         [SerializeField] bool DisableJointsOnStart;
         [SerializeField] HingeJoint[] JointsList;
         JointCacheData[] JointCache;
-    
+
         void Awake()
         {
             this.JointCache = new JointCacheData[this.JointsList.Length];
@@ -62,7 +62,7 @@ namespace Eco.Client.Utils
                 var joint = this.JointsList[i];
                 this.JointCache[i] = new JointCacheData(joint, joint.connectedBody, joint.limits, joint.useSpring);
             }
-        
+
             if (this.DisableJointsOnStart) this.DisableJoints();
         }
 
@@ -75,7 +75,7 @@ namespace Eco.Client.Utils
         }
 
         public void DisableJoints() { foreach (var jointData in this.JointCache) jointData.Reset(); }
-    
+
         public void EnableJoints() { foreach (var jointData in this.JointCache) jointData.LoadCache(); }
     }
 }

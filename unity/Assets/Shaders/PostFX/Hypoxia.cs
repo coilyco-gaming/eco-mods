@@ -60,7 +60,7 @@ public sealed class HypoxiaRenderer : PostProcessEffectRenderer<Hypoxia>
     // Called by camera to apply image effect
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-        
+
 
         //material.SetFloat("_Intensity", Intensity);
         //material.SetFloat("_WarpIntensity", WarpIntensity);

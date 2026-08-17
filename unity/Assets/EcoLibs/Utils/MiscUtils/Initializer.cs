@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Strange Loop Games. All rights reserved.
 // See LICENSE file in the project root for full license information.
 
-//Client version of the same thing in server, except uses an Action instead of a ThreadSafeAction.  
+//Client version of the same thing in server, except uses an Action instead of a ThreadSafeAction.
 //Kinda ugly its duplicated, duplication could be removed through fanciness
 namespace Eco.Shared.Utils
 {

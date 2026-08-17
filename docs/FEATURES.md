@@ -16,5 +16,8 @@ Repository-level inventory for `eco-mods`.
 
 ## See also
 
-- [mods/docs/FEATURES.md](../mods/docs/FEATURES.md)
-- [unity/docs/FEATURES.md](../unity/docs/FEATURES.md)
+- [README.md](../README.md) - human-facing intro.
+- [AGENTS.md](../AGENTS.md) - operating rules.
+- [.ward/ward.yaml](../.ward/ward.yaml) - allowlisted commands.
+- [mods/docs/FEATURES.md](../mods/docs/FEATURES.md) and
+  [unity/docs/FEATURES.md](../unity/docs/FEATURES.md) - per-subtree inventories.

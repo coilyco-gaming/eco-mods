@@ -22,7 +22,7 @@ public class AnimatedUV_UI : TrackableBehavior
         image.material = materialInstance;
     }
 
-    void LateUpdate() 
+    void LateUpdate()
     {
         if (image == null || !image.enabled) return;
 

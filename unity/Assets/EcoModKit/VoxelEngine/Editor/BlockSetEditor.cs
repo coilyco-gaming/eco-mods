@@ -208,7 +208,7 @@ public class BlockSetEditor : Editor
         }
         ForceSave_Clicked();
         blockList.Rebuild();
-    }    
+    }
 
     private static int PrefixLength(string a, string b)
     {
@@ -245,7 +245,7 @@ public class BlockSetEditor : Editor
             blockSet.Blocks.Remove(selectedBlock);
             blockList.selectedIndex = -1;
             blockList.Rebuild();
-        }        
+        }
     }
 
     private void ForceSave_Clicked()

@@ -14,7 +14,7 @@ namespace Eco.Client.Photography
     [PostProcess(typeof(VintageEffectsRenderer), PostProcessEvent.AfterStack, "Custom/Vintage")]
     public sealed class Vintage : PostProcessEffectSettings
     {
-        [Range(0f, 1f), Tooltip("Intensity. Lerps between original image and effect")] 
+        [Range(0f, 1f), Tooltip("Intensity. Lerps between original image and effect")]
         public FloatParameter blend = new FloatParameter { value = 1.0f };
         public FloatParameter tone  = new FloatParameter { value = 0.5f };
 
@@ -25,7 +25,7 @@ namespace Eco.Client.Photography
     [Preserve]
     public sealed class VintageEffectsRenderer : PostProcessEffectRenderer<Vintage>
     {
-        public override void Render(PostProcessRenderContext context) 
+        public override void Render(PostProcessRenderContext context)
         {
             var sheet = context.propertySheets.Get(Shader.Find("Hidden/Custom/Vintage")); //Find the shader and create a sheet for the parameters
             sheet.properties.SetFloat("_Blend", this.settings.blend);

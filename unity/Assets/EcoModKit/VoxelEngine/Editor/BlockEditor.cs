@@ -11,7 +11,7 @@ public static class BlockEditor
     static readonly string harvestEffectName = "Harvest";
     static readonly string pickupEffectName  = "Pickup";
 
-    public static void DrawBlockEditor(Block block) 
+    public static void DrawBlockEditor(Block block)
     {
         try
         {

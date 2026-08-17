@@ -7,7 +7,7 @@ using UnityEngine;
 public partial class HighlightableObject : SubscribableBehavior
 {
     public bool seeThrough;
-    
+
     [Tooltip("Transparent generic highlight material of mesh bonds will be used if this is ON (instead of mesh highlight)")]
     public bool forceOpaque;
 }

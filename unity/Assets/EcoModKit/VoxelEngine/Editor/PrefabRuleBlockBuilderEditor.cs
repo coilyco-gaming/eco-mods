@@ -305,7 +305,7 @@ public class PrefabRuleBlockBuilderEditorWindow : EditorWindow
                     }
                     EditorGUILayout.EndHorizontal();
                 }
-                EditorGUILayout.EndHorizontal();                
+                EditorGUILayout.EndHorizontal();
 
                 i++;
             }

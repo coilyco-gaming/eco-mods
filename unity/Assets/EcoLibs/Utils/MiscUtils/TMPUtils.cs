@@ -14,7 +14,7 @@ namespace Assets.EcoLibs.Utils.MiscUtils
         const float TmpWidth    = 64f; //The width of the glyph.
         const float TmpHeight   = 64f; //The height of the glyph.
 
-        //These are fields for the FaceInfo - basically description for a font. 
+        //These are fields for the FaceInfo - basically description for a font.
         const int   FacePointSize   = 64;
         const float FaceScale       = 1f;
         const float FaceAscentLine  = 50f; //Sprites need default height or else they would bug out on display.

@@ -338,13 +338,13 @@ public static class UnityUIUtils
         var pos = rect.anchoredPosition;
         pos.y = newY;
         rect.anchoredPosition = pos;
-    }    
+    }
 
     // find the element equal to value first, then find the element contains value
     public static T FindBestNameMatch<T>(this IEnumerable<T> source, Func<T, string> selector, string searchingValue) where T : Component
     {
         var components = source.ToArray();
-        return components.FirstOrDefault(tValue => selector(tValue).Equals(searchingValue)) ?? 
+        return components.FirstOrDefault(tValue => selector(tValue).Equals(searchingValue)) ??
                components.FirstOrDefault(tValue => selector(tValue).Contains(searchingValue));
     }
 

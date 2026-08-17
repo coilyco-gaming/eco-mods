@@ -3,7 +3,7 @@
 
 using UnityEngine;
 
-public class OverrideCenterOfMass : TrackableBehavior 
+public class OverrideCenterOfMass : TrackableBehavior
 {
     public Transform CenterOfMass;
 

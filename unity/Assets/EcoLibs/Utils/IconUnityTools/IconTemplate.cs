@@ -20,4 +20,3 @@ public class IconTemplate : TrackableBehavior
     public Image Foreground;
     public Image FullImage;
 }
-

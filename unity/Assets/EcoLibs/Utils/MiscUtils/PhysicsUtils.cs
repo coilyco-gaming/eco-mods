@@ -104,7 +104,7 @@ public static class PhysicsUtils
         Debug.LogError("OverlapCollider used on an unsupported collider type, add the type " + collider.GetType().Name);
         return 0;
     }
-    
+
     /// <summary>
     /// Similar to <see cref="CheckCapsule(Vector3, Quaternion, Vector3, Vector3, float, float,QueryTriggerInteraction, int[]"/> but accept a <see cref="LayerMask"/> instead of layers list.
     /// </summary>
@@ -132,7 +132,7 @@ public static class PhysicsUtils
         //Rotate direction vector on cross axis half way in both direction to calculate start and end vectors of the arc
         var start = Quaternion.AngleAxis(-arcAngle/2f, crossAxis.normalized) * direction;
         var end   = Quaternion.AngleAxis( arcAngle/2f, crossAxis.normalized) * direction;
-        
+
         var current = start;
         for (int i = 0; i <= rayCount - 1; i++)
         {
@@ -173,7 +173,7 @@ public static class PhysicsUtils
         var layerMask    = newLayerMask & (oldLayerMask ^ newLayerMask);
 
         if (layerMask == 0) return true; //If new layer doesn't collide with more layers than old one it's safe to switch
-        
+
         //Get colliders that should be ignored, because they belong to the same rigidbody
         var ignored = collider.attachedRigidbody?.GetComponentsInChildren<Collider>() ?? Array.Empty<Collider>();
 

@@ -253,8 +253,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -329,8 +329,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -493,8 +493,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -646,37 +646,37 @@ PrefabInstance:
     - target: {fileID: 1246105590020221291, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: targetOverride
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 1247019194774431127, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: targetOverride
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 1901461925794871509, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: OnEnableOperating.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 1901461925794871509, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: OnDisableOperating.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 1901461925794871509, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: OnInitiallyEnabledOperating.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 2405503425268561411, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: targetOverride
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 3025525241645647835, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: targetOverride
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 3131877941667773876, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
@@ -701,7 +701,7 @@ PrefabInstance:
     - target: {fileID: 5555952876954705155, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: targetOverride
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 5798378888995067187, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
@@ -726,37 +726,37 @@ PrefabInstance:
     - target: {fileID: 7220918444578064743, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: 'seats.Array.data[1]'
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 7220918444578064743, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: 'seats.Array.data[2]'
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 7220918444578064743, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: 'seats.Array.data[3]'
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 7220918444578064743, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: 'seats.Array.data[4]'
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 7220918444578064743, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: 'seats.Array.data[5]'
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 7220918444578064743, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: 'seats.Array.data[6]'
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 7694019986599977302, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}
       propertyPath: targetOverride
-      value: 
+      value:
       objectReference: {fileID: 0}
     - target: {fileID: 8503041478783887839, guid: afb767724d01d984abd174b0e2c799dd,
         type: 3}

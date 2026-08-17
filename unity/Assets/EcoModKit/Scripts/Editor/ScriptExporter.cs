@@ -60,7 +60,7 @@ public class ScriptExporter : IDisposable
 
         // add in the eco script to compile
         string ecoscripttext = @"
-            using UnityEngine; 
+            using UnityEngine;
             public class EcoScript : MonoBehaviour { }
             ";
         textToCompile.Add(ecoscripttext);
@@ -83,7 +83,7 @@ public class ScriptExporter : IDisposable
         var textAsset = this.ConvertStringToTextAsset(assemblyString, OutputDllName);
 
         EditorUtility.ClearProgressBar();
-        
+
         return textAsset;
     }
 

@@ -14,7 +14,7 @@ namespace EcoModKitEditor.Occupancy.Internal
     using EcoModKit.Occupancy;
     using Color = UnityEngine.Color;
 
-    /// <summary> Custom editor for the CustomPositionsRequirement class, it helps to create the position requirements visually by allowing to manipulate block positions using an axis handle, 
+    /// <summary> Custom editor for the CustomPositionsRequirement class, it helps to create the position requirements visually by allowing to manipulate block positions using an axis handle,
     /// rather than of having them being defined one by one</summary>
     [CustomEditor(typeof(CustomPositionsRequirement))]
     public class CustomPositionsRequirementEditor : Editor
@@ -41,7 +41,7 @@ namespace EcoModKitEditor.Occupancy.Internal
             labelStyle.normal.textColor = Color.red;
             textStyle = new GUIStyle();
             textStyle.richText = true;
-        
+
             //Set reorderable list draw callbacks
             srReorderableList.drawHeaderCallback    = DrawHeader;
             srReorderableList.drawElementCallback   = DrawElements;
@@ -57,7 +57,7 @@ namespace EcoModKitEditor.Occupancy.Internal
             serializedObject.Update();
             srReorderableList.DoLayoutList();
             serializedObject.ApplyModifiedProperties();
-        
+
             //Draw Remove duplicates button
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("Remove duplicates")) RemoveDuplicates();
@@ -79,7 +79,7 @@ namespace EcoModKitEditor.Occupancy.Internal
             // Draw position axis handle and text describing it
             Handles.Label(pivot.value, "Positions Requirement \n selected positions", labelStyle);
             var newHandlePos = Handles.PositionHandle(pivot.value, Quaternion.identity);
-            
+
             //Round new position  to integers and calculate delta(how much did it move)
             var newPosInt = new Vector3Int(Mathf.RoundToInt(newHandlePos.x), Mathf.RoundToInt(newHandlePos.y), Mathf.RoundToInt(newHandlePos.z)); ;
             var delta     = newPosInt - pivot.value;
@@ -111,7 +111,7 @@ namespace EcoModKitEditor.Occupancy.Internal
                 var pos = positions.GetArrayElementAtIndex(innerIndex); //Position parameter to draw
 
                 //Get Selectable<Vector3> serialized properties
-                var selectable = pos.FindPropertyRelative("select"); 
+                var selectable = pos.FindPropertyRelative("select");
                 var value      = pos.FindPropertyRelative("value");
 
                 //Draw select box and Vector3Int fields
@@ -128,7 +128,7 @@ namespace EcoModKitEditor.Occupancy.Internal
                 var btnWidth    = rect.width * 0.25f;  //width for buttons and also used as an offset
                 var btnPosition = rect.x + rect.width; //base position from where to place the buttons
 
-                //Draw positions requirement helper buttons 
+                //Draw positions requirement helper buttons
                 if (GUI.Button(new Rect(btnPosition - btnWidth * 4, rect.y - EditorGUIUtility.singleLineHeight * 2.15f, btnWidth, EditorGUIUtility.singleLineHeight), "Select all"))         { SetAllSelectedTo (customPositionsReq.positionsRequirements[index], true); }
                 if (GUI.Button(new Rect(btnPosition - btnWidth * 4, rect.y - EditorGUIUtility.singleLineHeight * 1.15f, btnWidth, EditorGUIUtility.singleLineHeight), "Deselect all"))       { SetAllSelectedTo (customPositionsReq.positionsRequirements[index], false); }
                 if (GUI.Button(new Rect(btnPosition - btnWidth * 3, rect.y - EditorGUIUtility.singleLineHeight * 2.15f, btnWidth, EditorGUIUtility.singleLineHeight), "Duplicate selected")) { DuplicateSelected(customPositionsReq.positionsRequirements[index]); }
@@ -183,9 +183,9 @@ namespace EcoModKitEditor.Occupancy.Internal
         void SetAllSelectedTo(PositionsRequirement positionsRequirement, bool value) { foreach (var pos in positionsRequirement.positions) pos.select = value; }
 
         //Removes duplicates on each positions requirement
-        void RemoveDuplicates() 
+        void RemoveDuplicates()
         {
-            foreach (var sr in customPositionsReq.positionsRequirements) 
+            foreach (var sr in customPositionsReq.positionsRequirements)
                 sr.positions = sr.positions.DistinctBy(a => a.value).ToList();
         }
     }

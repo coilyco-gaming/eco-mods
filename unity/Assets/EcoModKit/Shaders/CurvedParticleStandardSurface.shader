@@ -91,13 +91,13 @@ Shader "Curved/Particles/Standard Surface"
             void vertParticleShadowCasterCurve(VertexInput v,
 #ifdef UNITY_STANDARD_USE_SHADOW_OUTPUT_STRUCT
                 out VertexOutputShadowCaster o,
-#define OUTO o, 
+#define OUTO o,
 #else
 #define OUTO
 #endif
 #ifdef UNITY_STANDARD_USE_STEREO_SHADOW_OUTPUT_STRUCT
                 out VertexOutputStereoShadowCaster os,
-#define OUTOS os, 
+#define OUTOS os,
 #else
 #define OUTOS
 #endif

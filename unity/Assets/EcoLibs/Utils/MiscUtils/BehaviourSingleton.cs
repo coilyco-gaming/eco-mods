@@ -14,9 +14,9 @@ public class BehaviourSingleton<T> : SubscribableBehavior where T : BehaviourSin
 
     public virtual void Awake()
     {
-        if (obj != null) 
+        if (obj != null)
             Debug.LogError("Assigning a singleton twice: " + typeof(T).Name);
-        
+
         obj = this.GetComponent<T>();
         UtilCache.SubscribePostDisconnectionEvent?.Invoke(this, Reset);
         Reset();

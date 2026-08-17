@@ -54,7 +54,7 @@ public static class ColliderUtils
             TempLists.Return(list);
         }
     }
-    
+
     /// <summary>
     /// Calculates compound collider bounds which contains bounds of all colliders in <see cref="list"/>.
     /// If no colliders then it will return default bounds (zero size at zero point).
@@ -77,7 +77,7 @@ public static class ColliderUtils
     /// <summary>
     /// Get start and end of a capsule collider without having to pass the instance. Useful when needing to check for multiple poses
     /// but don't want to actually move the collider.
-    /// If <paramref name="fullHeight"/> is true, we will use the full height of the capsule; otherwise, we will subtract the radius from the spheres at the limits of the capsule 
+    /// If <paramref name="fullHeight"/> is true, we will use the full height of the capsule; otherwise, we will subtract the radius from the spheres at the limits of the capsule
     /// </summary>
     /// <remarks>Only works for capsules with default value of direction.</remarks>
     public static (Vector3 start, Vector3 end) GetCapsuleStartEnd(Vector3 position, Quaternion rotation, Vector3 scale, Vector3 center, float radius, float height, bool fullHeight = false)
@@ -88,7 +88,7 @@ public static class ColliderUtils
             var startEnd = center.TransformPoint(position, rotation, scale);
             return (startEnd, startEnd);
         }
-		
+
         ///If the capsule is long enough to be a normal one:
         ///If <param name="fullHeight"/> is false, subtract height by radius twice to get the height of the cylinder inside the capsule.
         ///Otherwise, just get the height of the capsule.

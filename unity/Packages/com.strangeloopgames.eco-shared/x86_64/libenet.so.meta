@@ -22,7 +22,7 @@ PluginImporter:
         Exclude Win: 0
         Exclude Win64: 0
   - first:
-      Any: 
+      Any:
     second:
       enabled: 1
       settings: {}
@@ -70,6 +70,6 @@ PluginImporter:
       enabled: 1
       settings:
         CPU: AnyCPU
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

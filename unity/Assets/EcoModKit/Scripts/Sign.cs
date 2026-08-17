@@ -12,7 +12,7 @@ public partial class Sign : WorldObject
     public TextMeshPro[] ExtraSignTexts;
 
     ///<summary>Sign prefabs might have different vertical alignment set which has inconsistent behavior with rich text, this makes all signs behave same way</summary>
-    void Start() 
+    void Start()
     {
         this.SignText.verticalAlignment = VerticalAlignmentOptions.Middle;
         foreach (var text in ExtraSignTexts)

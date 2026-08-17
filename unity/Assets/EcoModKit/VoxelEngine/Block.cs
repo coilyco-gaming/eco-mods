@@ -11,14 +11,14 @@ using UnityEngine.Serialization;
 /// </summary>
 [Serializable]
 [DebuggerDisplay("{Name}")]
-public partial class Block 
+public partial class Block
 {
     public string       Name;
     public BlockBuilder Builder;
     public Material     Material;
     [FormerlySerializedAs("Texture")]
     public Texture2D    LODTexture;
-    
+
     /// <summary>
     /// Force set this.<see cref="Material"/> to be transparent. Check comment in
     /// <see cref="IsMaterialTransparent"/> for more details.
@@ -45,7 +45,7 @@ public partial class Block
     public int Tier = 0;
 
     public int BlendingPriority = 0;
-    
+
     public bool GenerateMeshCollider = false;
 
     public bool IsEmpty;

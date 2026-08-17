@@ -16,6 +16,6 @@ public class FullToNoneSequence : FoodBiteSequence
             parts[i].transform.localScale = Vector3.one;
         }
     }
-    
+
     public override GameObject GetCurrentBitePiece(GameObject[] parts) => null; // All parts here are just next object state, so this not not valid for current bite sequence
 }

@@ -5,7 +5,7 @@
 using UnityEngine;
 
 public class SpawnOnAwake : TrackableBehavior
-{ 
+{
     public GameObject obj;
 
     private void Awake()
