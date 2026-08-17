@@ -23,7 +23,7 @@ See also [eco-cycle-prep](https://github.com/coilyco-bridge/eco-cycle-prep) for 
 
 ## Commands
 
-Dev commands are declared in [../.ward/ward.yaml](../.ward/ward.yaml). Run them as `ward exec <verb>`.
+Dev commands are declared in the [../justfile](../justfile). Run them as `just <verb>`.
 
 ## See also
 

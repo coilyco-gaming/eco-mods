@@ -8,4 +8,5 @@ publishes install-ready mod packages.
 
 - [AGENTS.md](AGENTS.md) - repository boundaries and operating rules.
 - [docs/FEATURES.md](docs/FEATURES.md) - the shipped inventory.
-- [.ward/ward.yaml](.ward/ward.yaml) - allowlisted commands.
+- [justfile](justfile) - dev verbs.
+- [.ward/ward.yaml](.ward/ward.yaml) - catalog metadata only.

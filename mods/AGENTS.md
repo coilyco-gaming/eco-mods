@@ -29,15 +29,15 @@ The `../Eco/` sibling has vendor-provided game source. Background-only. Do not p
 Route dev verbs through Ward, which reads [../.ward/ward.yaml](../.ward/ward.yaml).
 
 ```sh
-ward exec build-mods
-ward exec copy-assets
-ward exec zip-assets -- <ModName>
-ward exec push-asset -- <ModName>
+just build-mods
+just copy-assets
+just zip-assets <ModName>
+just push-asset <ModName>
 ```
 
 ## Validation
 
-`ward exec build-mods` type-checks all mods against `Eco.ReferenceAssemblies`. Run the Ward validation verbs before pushing. Run tests, linters, and builds without asking. Fix failures. Never use `--no-verify`.
+`just build-mods` type-checks all mods against `Eco.ReferenceAssemblies`. Run the Ward validation verbs before pushing. Run tests, linters, and builds without asking. Fix failures. Never use `--no-verify`.
 
 ## Safety
 
@@ -47,14 +47,14 @@ Do not hand-edit generated files in `BunWulfEducational/Recipes/Tech/` or `BunWu
 
 Patch notes + restart heads-ups delegate to `../eco-cycle-prep/`:
 
-- `ward exec discord-post -- --channel=general-public --from-file=<path>` from the cycle-prep directory
-- `ward exec restart-notice -- [--reason="..."]` from the cycle-prep directory
+- `just discord-post --channel=general-public --from-file=<path>` from the cycle-prep directory
+- `just restart-notice [--reason="..."]` from the cycle-prep directory
 
 Voice rules in [`../eco-cycle-prep/AGENTS.md`](../eco-cycle-prep/AGENTS.md). Posting is gated to actual deploys (`push-asset`, `mods-sync`, mod.io release, direct ssh edit), not bare main commits.
 
 ## Release
 
-Targets: Windows `C:\Program Files (x86)\Steam\steamapps\common\Eco\Eco_Data\Server\`, Linux `/home/kai/Steam/steamapps/common/EcoServer/`. Mods distribute as `.zip` files users extract to their server root. The `ward exec push-asset` verb handles the private deployment path.
+Targets: Windows `C:\Program Files (x86)\Steam\steamapps\common\Eco\Eco_Data\Server\`, Linux `/home/kai/Steam/steamapps/common/EcoServer/`. Mods distribute as `.zip` files users extract to their server root. The `just push-asset` verb handles the private deployment path.
 
 ## Agent rules
 

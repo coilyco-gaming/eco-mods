@@ -1,49 +1,9 @@
-commands:
-  build-mods:
-    run: bash mods/scripts/ward-command.sh build
-    description: Type-check all server mods against Eco.ReferenceAssemblies.
-  lock-mods:
-    run: uv lock --project mods
-    description: Refresh the locked Python environment for mod tooling.
-  test-mod-packages:
-    run: bash mods/scripts/ward-command.sh test-packages
-    description: Test deterministic per-mod packaging and Forgejo publishing.
-  lint-mod-packages:
-    run: bash mods/scripts/ward-command.sh lint-packages
-    description: Lint and format-check the mod package tooling.
-  format-mod-packages:
-    run: bash mods/scripts/ward-command.sh format-packages
-    description: Format the mod package tooling.
-  python-syntax:
-    run: uv run --project mods python -m compileall -q mods
-    description: Compile the Python tooling to catch syntax errors.
-  validate-ci:
-    run: uv run --project mods python mods/scripts/validate_workflow.py
-    description: Parse the Forgejo workflow as YAML.
-  secret-scan:
-    run: pre-commit run trufflehog --all-files --config mods/.pre-commit-config.yaml
-    description: Run both offline trufflehog hooks without the broken layout hooks.
-  package-mod:
-    run: bash mods/scripts/ward-command.sh package-mod
-    description: Package MOD_NAME under .build/mod-package for MOD_SOURCE_REVISION.
-  publish-mod:
-    run: bash mods/scripts/ward-command.sh publish-mod
-    description: Publish .build/mod-package using the FORGEJO_PACKAGE_* environment.
-  copy-assets:
-    run: bash mods/scripts/ward-command.sh copy-assets
-    description: Refresh the assets folder from eco-mods-assets. Pass optional --branch NAME after `--`.
-  zip-assets:
-    run: bash mods/scripts/ward-command.sh zip-assets
-    description: Zip Mods/UserCode/<name> into <name>.zip. Pass NAME after `--`.
-  push-asset:
-    run: bash mods/scripts/ward-command.sh push-asset
-    description: Zip a UserCode mod and deploy the archive to the Eco server. Pass NAME after `--`.
-  bunwulf-agricultural:
-    run: bash mods/scripts/ward-command.sh bunwulf-agricultural
-    description: Regenerate BunWulfAgricultural plants from templates.
-  bunwulf-structural:
-    run: bash mods/scripts/ward-command.sh bunwulf-structural
-    description: Regenerate BunWulfStructural recipes from recipes.yml.
+# Catalog metadata for the cross-repo knowledge graph.
+#
+# Dev verbs used to live here as a `commands:` block. They are recipes in the
+# justfile now. This file survives only because check_catalog_block pins this
+# exact path and catalog-trifecta wants README, AGENTS, and FEATURES to link
+# it, both upstream in agentic-os.
 
 catalog:
   description: "Eco gameplay mods and Unity assets for the gaming stack."

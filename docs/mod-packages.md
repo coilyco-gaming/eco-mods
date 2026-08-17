@@ -35,6 +35,6 @@ as `FORGEJO_PACKAGE_TOKEN`, and package creation and tests never receive it.
 ## Local commands
 
 Set `MOD_NAME`, `MOD_PACKAGE_NAME`, and `MOD_SOURCE_REVISION`, then run `ward
-exec package-mod`. `ward exec test-mod-packages` runs the deterministic archive
+exec package-mod`. `just test-mod-packages` runs the deterministic archive
 and publishing tests. Publishing also needs `FORGEJO_PACKAGE_URL`, `_OWNER`,
-`_USER`, and `_TOKEN` before `ward exec publish-mod`.
+`_USER`, and `_TOKEN` before `just publish-mod`.
