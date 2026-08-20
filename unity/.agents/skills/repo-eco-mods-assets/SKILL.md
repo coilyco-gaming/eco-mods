@@ -5,10 +5,10 @@ description: Triggers - eco-mods-assets
 
 # repo-eco-mods-assets
 
-Pointer to `~/projects/coilysiren/eco-mods-assets/`.
+`eco-mods-assets` was retired. Its Unity project is now the `unity/` directory of `coilyco-gaming/eco-mods` on Forgejo, which is where this skill lives.
 
 - [`README.md`](../../../README.md) - what it is, quickstart, layout.
-- [`AGENTS.md`](../../../AGENTS.md) - agent-facing operating context for the repo.
+- [`AGENTS.md`](../../../AGENTS.md) - agent-facing operating context for this directory.
 - [`docs/FEATURES.md`](../../../docs/FEATURES.md) - what ships today.
 
-Read those before answering substantive questions about eco-mods-assets.
+Read those before answering substantive questions about the Unity project.

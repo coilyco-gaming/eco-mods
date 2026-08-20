@@ -1,19 +1,25 @@
 [![Eco by Strange Loop Games](https://cdn.cloudflare.steamstatic.com/steam/apps/382310/header.jpg)](https://store.steampowered.com/app/382310/Eco/)
 
-<sub>Banner: Steam header for Eco by [Strange Loop Games](https://strangeloopgames.com/). Used here for attribution; not my artwork.</sub>
+<sub>Banner: Steam header for Eco by [Strange Loop Games](https://strangeloopgames.com/). Used here for attribution, not my artwork.</sub>
 
-# eco-mods-assets
+# unity
 
-Unity project that produces the asset bundles consumed by my [Eco](https://play.eco/) mods. `Assets/`, `Packages/`, `ProjectSettings/`, and `Builds/` are the usual Unity project layout; `AssetBundles/` holds the built output. The built bundles end up alongside the C# mod source in [eco-mods-public](https://github.com/coilyco-flight-deck/eco-mods-public) (and [eco-mods](https://github.com/coilyco-bridge/eco-mods) for the private server), copied there by `invoke copy-assets`.
+The Unity project that builds the asset bundles Kai's [Eco](https://play.eco/) mods load. This is a directory of `eco-mods`, not a repository of its own.
 
-This repo is Unity-native: open `Library/` via the Unity Editor (do not edit `.meta` files by hand, Unity manages them). Source art and raw assets live here; finished bundles flow out to the consumer mod repos.
+`Assets/`, `Packages/`, and `ProjectSettings/` are the usual Unity layout. `AssetBundles/` holds bundle output, and `Builds/Mods/UserCode/<Mod>/Assets/` holds the per-mod build that the sibling `mods/` tree consumes. The editor version is pinned in `ProjectSettings/ProjectVersion.txt`.
 
-Related repos: [eco-mods-assets-embeded](https://github.com/coilyco-bridge/eco-mods-assets-embeded) for the embedded icons, prefabs, and scenes referenced by mods at runtime, [eco-mods-public](https://github.com/coilyco-flight-deck/eco-mods-public) for the C# mods that consume the built bundles, and [StrangeLoopGames/EcoModKit](https://github.com/StrangeLoopGames/EcoModKit) for the official Unity modkit package.
+Point the Unity Hub at this directory, not at the repository root. `Library/` is generated and ignored, so a fresh checkout imports the whole tree on first open and that takes a while.
+
+Build a bundle from the Editor with `ModKit > Build Current Bundle`, one scene at a time. Unity manages the `.meta` files, so do not edit them by hand.
+
+## Siblings
+
+- `../mods/` - the C# mod source that loads these bundles.
+- `../unity-embedded/` - icons, prefabs, and scenes the client loads directly rather than through a bundle.
+- [StrangeLoopGames/EcoModKit](https://github.com/StrangeLoopGames/EcoModKit) - the upstream modkit, vendored under `Assets/EcoModKit/`.
 
 ## See also
 
-- [AGENTS.md](AGENTS.md) - per-repo agent operating rules.
+- [AGENTS.md](AGENTS.md) - agent operating rules for this directory.
 - [docs/FEATURES.md](docs/FEATURES.md) - inventory of what ships today.
-- [.coily/coily.yaml](.coily/coily.yaml) - allowlisted commands plus catalog metadata.
-
-Cross-reference convention from [coilysiren/agentic-os#59](https://github.com/coilyco-flight-deck/agentic-os/issues/59).
+- [.coily/coily.yaml](.coily/coily.yaml) - catalog metadata only.
