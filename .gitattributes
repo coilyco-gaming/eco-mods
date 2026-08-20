@@ -5,6 +5,10 @@
 # Normalize line endings for text by default.
 * text=auto
 
+# Shell scripts stay LF so shellcheck does not trip SC1017 on a Windows
+# checkout, where text=auto with core.autocrlf=true would hand them CRLF.
+*.sh             text eol=lf
+
 # --- Unity asset bundles / packages (the shippable mod artifacts) ---
 *.unity3d        filter=lfs diff=lfs merge=lfs -text
 *.unitypackage   filter=lfs diff=lfs merge=lfs -text
