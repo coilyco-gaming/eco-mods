@@ -95,15 +95,15 @@ def remove_class(recipe_data, file, key, class_name):
     class_end_index = 0
     recipe_data = "\n".join(recipe_lines)
     class_start_index = recipe_data.find(class_name)
-    backets_started = False
+    brackets_started = False
     for index in range(class_start_index, len(recipe_data)):
         char = recipe_data[index]
         if char == "{":
             bracket_count += 1
-            backets_started = True
+            brackets_started = True
         elif char == "}":
             bracket_count -= 1
-        elif backets_started and bracket_count == 0:
+        elif brackets_started and bracket_count == 0:
             class_end_index = index
             break
     if bracket_count != 0 or class_end_index == 0:

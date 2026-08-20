@@ -1,19 +1,4 @@
-# Vendored Eco and EcoModKit content plus Unity-generated project files. The text
-# is upstream or Unity-managed serialization, so an exclude is the only durable
-# fix. Editing it loses the change on the next import. See unity/AGENTS.md.
-#
-# These patterns are anchored to this file, so they apply to `typos .` but not to
-# the pre-commit hook, which hands typos one explicit path per file and leaves the
-# walk root at that file. Closing that gap needs an `exclude` on the hook itself,
-# which lives in the block apply-agentic-os-hooks.py manages.
-
-[files]
-extend-exclude = [
-  "unity/Assets/",
-  "unity/Packages/",
-  "unity/ProjectSettings/",
-  "unity/.gitignore",
-  "unity-embedded/Icons/",
-  "unity-embedded/Prefabs/",
-  "unity-embedded/Scenes/",
-]
+# The retired repo was literally named eco-mods-assets-embeded, misspelled.
+# References to it under unity-embedded/ are that proper noun, not a typo.
+[default.extend-words]
+embeded = "embeded"

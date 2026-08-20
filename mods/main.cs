@@ -516,7 +516,7 @@ namespace BunWulfModsPublic
                 fileData = fileData.Replace(", typeof(LibrarianLavishResourcesTalent)", "");
                 // Remove Focused Speed, which librarian does not have
                 fileData = fileData.Replace(", typeof(LibrarianFocusedSpeedTalent)", "");
-                // Remove Parallel Spped, which librarian does not have
+                // Remove Parallel Speed, which librarian does not have
                 fileData = fileData.Replace(", typeof(LibrarianParallelSpeedTalent)", "");
 
                 string targetFilePath = Path.Combine(targetDirectory, fileName);
