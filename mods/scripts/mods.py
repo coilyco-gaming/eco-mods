@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Asset and recipe tooling for eco-mods-public.
+"""Asset and recipe tooling for eco-mods.
 
 Subcommands mirror what used to live in tasks.py. Ward exposes them through
 the repository command catalog. See ../.ward/ward.yaml.
@@ -14,21 +14,23 @@ import argparse
 import os
 import shutil
 import stat
-import subprocess
 import sys
 
 import jinja2
 import regex
 import yaml
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+MODS_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, MODS_DIR)
 import util  # noqa: E402
 
 
-USERNAME = os.getenv("USERNAME", "")
-USERCODE_PATH = os.path.join(
-    "C:\\", "Users", USERNAME, "projects", "eco-mods-public", "Mods", "UserCode"
-)
+# The generated UserCode and the source Unity project both live in this
+# repository now. USERCODE_PATH resolves against the script, and copy_assets
+# reads the sibling unity/ tree rather than cloning the retired
+# eco-mods-assets remote.
+USERCODE_PATH = os.path.join(MODS_DIR, "Mods", "UserCode")
+UNITY_USERCODE = os.path.join(MODS_DIR, os.pardir, "unity", "Builds", "Mods", "UserCode")
 
 
 class RemovalException(Exception):
@@ -54,28 +56,11 @@ def copy_paths(origin_path, target_path):
         shutil.copytree(origin_path, target_path)
 
 
-def copy_assets(branch: str = ""):
-    print("Cleaning out assets folder")
-    if os.path.exists("./eco-server/assets"):
-        shutil.rmtree(
-            "./eco-server/assets", ignore_errors=False, onerror=handle_remove_readonly
-        )
-
-    cmd = ["git", "clone", "--depth", "1"]
-    if branch:
-        cmd += ["-b", branch]
-    cmd += ["--", "git@github.com:coilyco-bridge/eco-mods-assets.git", "./eco-server/assets"]
-    subprocess.run(cmd, check=True)
-
-    shutil.rmtree(
-        "./eco-server/assets/.git", ignore_errors=False, onerror=handle_remove_readonly
-    )
-
-    for build in os.listdir("./eco-server/assets/Builds/Mods/UserCode/"):
-        origin_path = os.path.join(
-            "./eco-server/assets/Builds/Mods/UserCode", build, "Assets"
-        )
-        target_path = os.path.join("./Mods/UserCode", build, "Assets")
+def copy_assets():
+    print("Copying Unity assets from the in-tree unity project")
+    for build in os.listdir(UNITY_USERCODE):
+        origin_path = os.path.join(UNITY_USERCODE, build, "Assets")
+        target_path = os.path.join(USERCODE_PATH, build, "Assets")
         copy_paths(origin_path, target_path)
 
 
@@ -130,11 +115,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="cmd", required=True)
 
-    p = sub.add_parser(
+    sub.add_parser(
         "copy-assets",
-        help="Refresh the assets folder from eco-mods-assets.",
+        help="Refresh Mods/UserCode assets from the in-tree unity project.",
     )
-    p.add_argument("--branch", default="")
 
     sub.add_parser(
         "bunwulf-agricultural",
@@ -148,7 +132,7 @@ def main():
     args = parser.parse_args()
 
     if args.cmd == "copy-assets":
-        copy_assets(branch=args.branch)
+        copy_assets()
     elif args.cmd == "bunwulf-agricultural":
         bunwulf_agricultural()
     elif args.cmd == "bunwulf-structural":
