@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "eco-mods-assets.slnx"
+    "dotnet.defaultSolution": "unity.slnx"
 }
