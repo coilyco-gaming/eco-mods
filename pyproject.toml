@@ -18,6 +18,15 @@ vendored = [
   "mods/Mods/UserCode/",
 ]
 
+[tool.agentic-os.context-load-points]
+# mods/ and unity/ still carry the AGENTS.md and CLAUDE.md load-points of the
+# repos merged into this one. Excluding them keeps those subtree docs in place
+# until the collapse is decided. The unity/ pair is tracked for rewrite in #29.
+excludes = [
+  "mods/",
+  "unity/",
+]
+
 # The managed markers are stamped inside the pre-commit YAML and
 # cannot form a single top-of-file comment block.
 [tool.agentic-os.code-comments]

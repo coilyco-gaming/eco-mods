@@ -50,7 +50,7 @@ Patch notes + restart heads-ups delegate to `../eco-cycle-prep/`:
 - `just discord-post --channel=general-public --from-file=<path>` from the cycle-prep directory
 - `just restart-notice [--reason="..."]` from the cycle-prep directory
 
-Voice rules in [`../eco-cycle-prep/AGENTS.md`](../eco-cycle-prep/AGENTS.md). Posting is gated to actual deploys (`push-asset`, `mods-sync`, mod.io release, direct ssh edit), not bare main commits.
+Voice rules for those posts live in `coilyco-gaming/eco-ops` under `cycle-prep/`. Posting is gated to actual deploys (`push-asset`, `mods-sync`, mod.io release, direct ssh edit), not bare main commits.
 
 ## Release
 
