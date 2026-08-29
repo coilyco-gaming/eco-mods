@@ -1,10 +1,8 @@
 repos:
-
   # BEGIN managed by agentic-os/scripts/apply-agentic-os-hooks.py
   - repo: https://forgejo.coilysiren.me/coilyco-flight-deck/agentic-os
-    rev: aos-precommit-v0.33.0
+    rev: aos-precommit-v0.55.0
     hooks:
-      - id: catalog-doc-size
       - id: catalog-trifecta
       - id: documentation-layout
       - id: context-load-points
@@ -17,6 +15,8 @@ repos:
       - id: agent-compose-size
       - id: agent-compose-dedup
       - id: trufflehog
+      - id: pr-guard
+      - id: git-workflow
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
@@ -30,9 +30,7 @@ repos:
       - id: check-illegal-windows-names
       - id: mixed-line-ending
       - id: check-json
-        # VS Code JSON is JSONC (comments allowed), and Unity owns its
-        # generated ProjectSettings files, so neither is strict JSON to check.
-        exclude: '(^|/)\.vscode/|^unity/ProjectSettings/'
+        exclude: (^|/)\.vscode/
       - id: check-toml
   - repo: https://github.com/rhysd/actionlint
     rev: v1.7.12
@@ -57,9 +55,6 @@ repos:
     rev: v1.48.0
     hooks:
       - id: typos
-        # The vendored Eco SDK and asset packs under unity/Assets/, and Unity's
-        # own serialized files, carry vendor spellings and field names that are
-        # not ours to change.
-        exclude: '^unity/(Assets|Packages)/|(^|/)\.gitignore$|\.(prefab|unity|controller|anim|asset|mat|meta)$'
-        args: []
+        # Report, do not rewrite. --force-exclude keeps _typos.toml binding.
+        args: [--force-exclude]
   # END managed by agentic-os/scripts/apply-agentic-os-hooks.py
