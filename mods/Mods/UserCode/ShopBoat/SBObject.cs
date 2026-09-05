@@ -33,7 +33,8 @@ namespace ShopBoat
     [RequireComponent(typeof(StandaloneAuthComponent))]
     [RequireComponent(typeof(FuelSupplyComponent))]
     [RequireComponent(typeof(FuelConsumptionComponent))]
-    [RequireComponent(typeof(TailingsReportComponent))]
+    // Eco 0.14 removed TailingsReportComponent with the tailings rework. Dropped rather than
+    // swapped for GroundPolluterReportComponent: this boat never generated tailings.
     [RequireComponent(typeof(MovableLinkComponent))]
     [RequireComponent(typeof(VehicleComponent))]
     [RequireComponent(typeof(StoreComponent))]
