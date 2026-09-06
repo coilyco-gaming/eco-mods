@@ -2,3 +2,12 @@
 # References to it under unity-embedded/ are that proper noun, not a typo.
 [default.extend-words]
 embeded = "embeded"
+
+# The Unity trees are imported, not authored here: the Eco SDK as upstream ships
+# it, the strangeloopgames shared package, third-party art, Unity .asset and
+# .controller files, and xdoc build caches. Spell-checking them reports 1276
+# hits in other people's files and would fork the SDK to silence them, which is
+# the same reason unity/ is already `excludes` and EcoModKit is already
+# `vendored` in pyproject.toml. LOD reads as a misspelling of LOAD there too.
+[files]
+extend-exclude = ["unity/", "unity-embedded/"]
